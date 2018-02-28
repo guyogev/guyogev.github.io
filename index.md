@@ -13,7 +13,7 @@ name: home
 
   <div class="bottom-page-wrapper">
     {% include my_stack.html %}
-    <div class="blog">blog it!</div>
+    {% include blog_posts.html %}
   </div>
   <!-- <div class="blog">blog</div> -->
 </main>
