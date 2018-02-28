@@ -1,0 +1,94 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  100% {
+    opacity: 1;
+  }
+}
+%fadeIn {
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+}
+
+@keyframes RotateY {
+  from { transform: rotateY(90deg); }
+  to { transform: rotateY(0deg); }
+}
+
+%rotateY {
+  animation-name: RotateY;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);  
+}
+
+@keyframes scaleY {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+%scaleY {
+  animation-name: scaleY;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  transform-origin: top;
+}
+
+@keyframes expandX {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+%expandX {
+  animation-name: expandX;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+.type-effect {
+  // overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .2rem solid greenyellow; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation: 
+    // typing 1s steps(40, end),
+    blink-caret .75s step-end 7;
+  animation-fill-mode: both;
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: greenyellow; }
+}
+
+$ease-in-quint:cubic-bezier(0.755, 0.050, 0.855, 0.060);
+$ease-out-quint:cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+@keyframes turn-off{
+  0%{
+    animation-timing-function:$ease-in-quint;
+    transform:scale(0.000,0.0001) translate3d(0,0,0);
+    -webkit-filter:brightness(50);
+    opacity:1;
+    background: greenyellow;
+  }
+  60%{
+    transform:scale(1,0.001) translate3d(0,0,0);
+    -webkit-filter:brightness(10);
+    filter:brightness(10);
+    background: rgba(0, 0, 0, 0.6);
+  }
+  100%{
+    filter:brightness(50);
+    transform:scale(1,1) translate3d(0,0,0);
+    -webkit-filter:brightness(1);
+    filter:brightness(1);
+    opacity:1;
+    background: rgba(0, 0, 0, 0.81);
+  }
+}
+
+%turnOn{
+  animation: turn-off .7s $ease-out-quint;
+  animation-fill-mode: forwards;
+  // animation-direction: reverse;
+}
+
+$ANIMATION_STEP_1: 1s;

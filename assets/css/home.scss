@@ -1,0 +1,378 @@
+---
+---
+@import "animations";
+@import "mixins";
+
+$GRAY_35: rgba(255, 255, 255, 0.35);
+
+%background-box {
+  background: $GRAY_35;
+  border-radius: 0.5rem;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  margin: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  html { font-size: 14px; }
+}
+
+.bg-img {
+  @include coverImage("{{ site.url }}/assets/images/tlv.jpg");
+  @extend %fadeIn;
+  height: 100%; 
+  animation-duration: $ANIMATION_STEP_1;
+  filter: blur(3px) sepia(0.15);
+}
+
+.home {
+  @extend %fadeIn;
+  animation-duration: $ANIMATION_STEP_1;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  padding: 0.5rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow: auto;
+  
+  .screen-wrapper {
+    @extend %fadeIn;
+    @extend %background-box;
+    // @extend %scaleY;
+    animation-delay: 0.3s;
+    animation-duration: 0.3s;
+
+    color: #111;
+    // height: fit-content;
+    // display: flex;
+    // flex-wrap: wrap;
+    margin: 0.5rem auto;
+    // padding: 0 0.5rem;
+    // padding: 16px;
+    // width: 65rem;
+    
+    @media (max-width: 1064px) {
+      // background: red;
+      max-width: 100%;
+      background: transparent;
+      box-shadow: none;
+      .screen {
+        max-width: 98%;
+        max-width: 90vw;
+        max-height: 50vw;
+      }
+      .screen-effect {
+        max-height: 50vw;
+        overflow: auto;
+      }
+    }
+
+    .about-me {
+      width: 16rem;
+      
+      .name {
+        font-size: 3rem;
+      }
+      
+      .title {
+        font-size: 2rem;
+        .type-effect {
+          animation-delay: 2s;
+        }
+      }
+    }
+
+    .screen {
+      background: rgba(0, 0, 0, 0.81);
+      border: .5rem solid #474e5d;
+      border-radius: 0.5rem;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      color: greenyellow;
+      margin: 1rem 1rem 0 1rem;
+      // padding: 0.6rem;
+      width: 40rem;
+      height: 22.5rem;
+      border-bottom-width: 1rem;
+
+      @media (max-width: 1064px) {
+        .screen {
+          max-width: 98%;
+          max-width: 90vw;
+          max-height: 50vw;
+        }
+      }
+
+      .screen-effect {
+        @extend %turnOn;
+        animation-delay: 0.5s;
+        opacity:0;
+        height: 22.5rem;
+        
+        @media (max-width: 1064px) {
+          max-height: 50vw;
+          overflow: auto;
+        }
+        p {
+          font-size: 1.3rem;
+          line-height: 1.6rem;
+          margin:0;
+          padding: 0.25rem 0.5rem;
+          
+          @media (max-width: 767px) {
+            font-size: 1rem;
+            line-height: normal;
+          }
+        }
+      }
+      .screen-text {
+        @extend %fadeIn;
+        animation-delay: 6s;
+        animation-direction: 0.1;
+      }
+    }
+
+    @media (max-width: 1064px) {
+      .screen-base-wrapper {
+          display: none;
+        }
+      .screen {
+        margin: 0.5rem auto;
+      }
+    }
+
+    .screen-base {
+      border-bottom: 4rem solid rgb(97, 96, 96);
+      border-left: 3rem solid transparent;
+      border-right: 3rem solid transparent;
+      height: 0;
+      width: 6rem;
+      margin: 0 auto;
+      
+      .screen-shadow {
+        box-shadow: inset 0px 0.4rem 0.4rem -0.4rem;
+        width: 6rem;
+        height: 1rem;
+      }
+    }
+    
+    .base-shadow {
+      width: 26rem;
+      height: 1rem;
+      margin: auto;
+      box-shadow: 0px 0.5rem 0.5rem -6px rgba(0, 0, 0, 0.55);
+      position: relative;
+      top: calc(-1rem + -1px);
+      border-radius: 50%;
+    }
+
+    .keyboard-mouse {
+      margin: auto;
+      display: flex;
+      align-items: center;
+      width: 26rem;
+      position: relative;
+      top: -1rem;
+    }
+
+    .keyboard {
+      border-bottom: 3rem solid #494949;
+      border-left: 2rem solid transparent;
+      border-right: 2rem solid transparent;
+      height: 0;
+      margin-left: 3rem;
+      width: 18rem;
+      border-radius: 2rem;
+    }
+
+    .mouse {
+      height: 5rem;
+      width: 2.6rem;
+      margin: auto;
+      border-radius: 1.2rem;
+      background: radial-gradient(#474e5d, #616060, #474e5d);
+      transform: rotate3d(3, 1, -1, 60deg);
+    }
+  }
+
+  .bottom-page-wrapper {
+    @extend %fadeIn;
+    animation-delay: 6.5s;
+    animation-duration: 0.5s;
+    display: flex;
+    min-height: 16rem;
+    
+    @media (max-width: 660px) {
+      display: initial;
+    }
+  }
+  
+  .my-stack {
+    @extend %scaleY;
+    @extend %background-box;
+    // @extend %fadeIn;
+    animation-delay: 6.2s;
+    animation-duration: 0.8s;
+    display: flex;
+    flex-direction: column;
+    // height: 22rem;
+    justify-content: space-around;
+    max-width: 22rem;
+    padding-right: 0.5rem;
+
+    @media (max-width: 1064px) {
+      max-width: 90vw;
+    }
+
+    @media (max-width: 660px) {
+      max-width: 18rem;
+      margin: auto;
+    }
+  
+    .stack-subject {
+      align-items: center;
+      display: flex;
+      // line-height: 3rem;
+      // margin: .5rem 0;
+      width: fit-content;
+    }
+  
+    .stack-subject-img {
+      // @extend %fadeIn;
+      // animation-delay: 7s;
+      // animation-duration: 0.3s;
+      height: 3rem;
+      width: 3rem;
+      margin: .5rem;
+
+      @media (max-width: 1064px) {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+  
+    .subject-icon {
+      animation-duration: 0.5s;
+      background-color: rgba(213, 189, 177, 0.41);
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      margin: 0.5rem;
+
+      @media (max-width: 1064px) {
+        max-height: 2rem;
+        max-width: 2rem;
+      }
+    }
+  
+    .subject-chips {
+      @extend %expandX;
+      align-items: center;
+      animation-delay: 6.8s;
+      animation-duration: 0.5s;
+      background: linear-gradient(to right, rgba(147, 90, 146, 0.0), rgba(18, 42, 110, 0.3));
+      border-radius: 1rem;
+      box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.12);
+      display: flex;
+      // flex-direction: column;
+      // height: 3rem;
+      overflow: hidden;
+    }
+  
+    .subject-icon {
+      @extend %fadeIn;
+      animation-duration: 0.6s;
+    }
+  
+    @for $i from 1 through 5 {
+      .subject-icon:nth-child(#{$i}) {
+        animation-delay: #{3.5 + $i / 2}s;
+      }
+    }
+    
+    .angular-icon {
+      @include imgIcon("https://johnpapa.gallerycdn.vsassets.io/extensions/johnpapa/angular-essentials/0.3.2/1508504847990/Microsoft.VisualStudio.Services.Icons.Default");
+    }
+  
+    .react-icon {
+      @include imgIcon("https://arcweb.co/wp-content/uploads/2016/10/react-logo-1000-transparent.png");
+    }
+  
+    .redux-icon {
+      @include imgIcon("https://jh.fyi/media/images/icons/tech/icon-redux.png");
+    }
+  
+    .jekyll-icon {
+      @include imgIcon("http://talk.jekyllrb.com/uploads/jekyllrb/original/1X/8b614a6e66f98a2596bea71530911af993b41747.png");
+    }
+  
+    .rails-icon {
+      @include imgIcon("{{ site.url }}/assets/images/rails.png");
+    }
+  
+    .phoenix-icon {
+      @include imgIcon("{{ site.url }}/assets/images/phoenix.png");
+    }
+  
+    .node-icon {
+      @include imgIcon("{{ site.url }}/assets/images/nodejs.png");
+    }
+  
+    .ruby-icon {
+      @include imgIcon("{{ site.url }}/assets/images/ruby.png");
+    }
+  
+    .elixir-icon {
+      @include imgIcon("{{ site.url }}/assets/images/elixir.png");
+    }
+  
+    .js-icon {
+      @include imgIcon("{{ site.url }}/assets/images/javascript.png");
+    }
+
+    .ts-icon {
+      @include imgIcon("{{ site.url }}/assets/images/typescript.png");
+    }
+  
+    .sql-icon {
+      @include imgIcon("{{ site.url }}/assets/images/sql.png");
+    }
+  
+    .aws-icon {
+      @include imgIcon("{{ site.url }}/assets/images/aws.png");
+    }
+  
+    .heroku-icon {
+      @include imgIcon("{{ site.url }}/assets/images/heroku.png");
+    }
+
+    .github-icon {
+      @include imgIcon("{{ site.url }}/assets/images/github.jpg");
+    }
+
+    .stackoverflow-icon {
+      @include imgIcon("{{ site.url }}/assets/images/stackoverflow.png");
+    }
+
+    .linkedin-icon {
+      @include imgIcon("{{ site.url }}/assets/images/linkedin.png");
+    }
+  }
+
+  .blog {
+    @extend %background-box;
+    @extend %fadeIn;
+    // width: 100%;
+    // height: 100%;
+    animation-delay: 7.1s;
+    animation-duration: 1s;
+    // animation-direction: reverse;
+    flex-grow: 1;
+
+    .blog-text {
+      width: 100%;
+      background: red;
+    }
+  }
+}
+

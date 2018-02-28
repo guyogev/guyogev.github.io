@@ -1,0 +1,16 @@
+@mixin coverImage($url) {
+  background-image: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin squre($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin imgIcon($url, $size: 2.5rem) {
+  @include coverImage($url);
+  @include squre($size);
+}
