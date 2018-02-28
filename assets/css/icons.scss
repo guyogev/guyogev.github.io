@@ -1,0 +1,71 @@
+---
+---
+@import "mixins";
+
+.angular-icon {
+  @include imgIcon("{{ site.url }}/assets/images/angular.png");
+}
+
+.react-icon {
+  @include imgIcon("{{ site.url }}/assets/images/react.png");
+}
+
+.redux-icon {
+  @include imgIcon("{{ site.url }}/assets/images/redux.png");
+}
+
+.jekyll-icon {
+  @include imgIcon("{{ site.url }}/assets/images/jekyll.png");
+}
+
+.rails-icon {
+  @include imgIcon("{{ site.url }}/assets/images/rails.png");
+}
+
+.phoenix-icon {
+  @include imgIcon("{{ site.url }}/assets/images/phoenix.png");
+}
+
+.node-icon {
+  @include imgIcon("{{ site.url }}/assets/images/nodejs.png");
+}
+
+.ruby-icon {
+  @include imgIcon("{{ site.url }}/assets/images/ruby.png");
+}
+
+.elixir-icon {
+  @include imgIcon("{{ site.url }}/assets/images/elixir.png");
+}
+
+.js-icon {
+  @include imgIcon("{{ site.url }}/assets/images/javascript.png");
+}
+
+.ts-icon {
+  @include imgIcon("{{ site.url }}/assets/images/typescript.png");
+}
+
+.sql-icon {
+  @include imgIcon("{{ site.url }}/assets/images/sql.png");
+}
+
+.aws-icon {
+  @include imgIcon("{{ site.url }}/assets/images/aws.png");
+}
+
+.heroku-icon {
+  @include imgIcon("{{ site.url }}/assets/images/heroku.png");
+}
+
+.github-icon {
+  @include imgIcon("{{ site.url }}/assets/images/github.jpg");
+}
+
+.stackoverflow-icon {
+  @include imgIcon("{{ site.url }}/assets/images/stackoverflow.png");
+}
+
+.linkedin-icon {
+  @include imgIcon("{{ site.url }}/assets/images/linkedin.png");
+}
