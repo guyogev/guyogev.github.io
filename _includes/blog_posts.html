@@ -1,11 +1,11 @@
 <div class="blog">
-  blog it!
-
-  <ul>
-      {% for post in site.posts %}
-        <li>
-          <a href="{{ post.url }}">{{ post.date }} {{ post.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+  {% for post in site.posts %}
+    <a href="{{ post.url }}">
+      <div class="date">{{ post.date | date_to_string }}</div>
+      <div class="post-text">
+        <div class="post-title">{{ post.title }}</div>
+        <div class="post-subtitle">{{ post.subtitle }}</div>
+      </div>
+    </a>
+  {% endfor %}
 </div>

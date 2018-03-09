@@ -3,15 +3,6 @@
 @import "animations";
 @import "mixins";
 
-$GRAY_35: rgba(255, 255, 255, .35);
-
-%background-box {
-  background: $GRAY_35;
-  border-radius: .5rem;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-  margin: .5rem;
-}
-
 @media (max-width: 768px) {
   html { font-size: 14px; }
 }
@@ -22,15 +13,19 @@ $GRAY_35: rgba(255, 255, 255, .35);
   animation-duration: $ANIMATION_STEP_1;
   filter: blur(3px) sepia(0.15);
   height: 100%; 
+  transform: translate3d(0,0,0);
 }
 
 .home {
+  @extend %background-box;
   @extend %fadeIn;
   animation-duration: $ANIMATION_STEP_1;
   bottom: 0;
   display: flex;
   flex-direction: column;
   left: 0;
+  margin: auto;
+  max-width: 65rem;
   overflow: auto;
   padding: .5rem;
   position: fixed;
@@ -39,7 +34,7 @@ $GRAY_35: rgba(255, 255, 255, .35);
   
   .screen-wrapper {
     @extend %fadeIn;
-    @extend %background-box;
+    // @extend %background-box;
     animation-delay: .3s;
     animation-duration: .3s;
     color: #111;
@@ -179,7 +174,7 @@ $GRAY_35: rgba(255, 255, 255, .35);
     animation-duration: .5s;
     display: flex;
     min-height: 16rem;
-    
+
     @media (max-width: 660px) {
       display: initial;
     }
@@ -187,13 +182,14 @@ $GRAY_35: rgba(255, 255, 255, .35);
   
   .my-stack {
     @extend %scaleY;
-    @extend %background-box;
+    // @extend %background-box;
     animation-delay: 6.2s;
     animation-duration: .8s;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     max-width: 22rem;
+    max-height: 18rem;
     padding-right: .5rem;
 
     @media (max-width: 1064px) {
@@ -223,10 +219,10 @@ $GRAY_35: rgba(255, 255, 255, .35);
     }
   
     .subject-icon {
+      @extend %hover-button;
       animation-duration: .5s;
       background-color: rgba(213, 189, 177, .41);
       border-radius: .5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
       margin: .5rem;
 
       @media (max-width: 1064px) {
@@ -254,17 +250,46 @@ $GRAY_35: rgba(255, 255, 255, .35);
   }
 
   .blog {
-    @extend %background-box;
+    // @extend %background-box;
     @extend %fadeIn;
-    // width: 100%;
-    // height: 100%;
     animation-delay: 7.1s;
     animation-duration: 1s;
-    // animation-direction: reverse;
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
 
-    .blog-text {
-      width: 100%;
+    a {
+      @extend %hover-button;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.45);
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      color: initial;
+      display: flex;
+      margin: .5rem;
+      padding: 0.5rem;
+      text-decoration: none;
+    }
+
+    .date {
+      font-style: italic;
+      line-height: 1.5rem;
+      margin: 0 0.5rem;
+      text-align: center;
+      min-width: 3rem;
+    }
+
+    .post-text {
+      width: calc(100% - 4rem);
+    }
+
+    .post-title {
+      @extend %ellipsis;
+      font-weight: bolder;
+    }
+
+    .post-subtitle {
+      @extend %ellipsis;
     }
   }
 }

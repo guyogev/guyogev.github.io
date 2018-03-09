@@ -1,0 +1,41 @@
+---
+---
+@import "animations";
+@import "mixins";
+@import "syntax";
+
+@media (min-width: 768px) {
+  html { font-size: 20px; }
+}
+
+.bg-img {
+  @include coverImage("{{ site.url }}/assets/images/tlv.jpg");
+  @extend %fadeIn;
+  animation-duration: 1s;
+  filter: blur(3px) sepia(0.15);
+  height: 100%; 
+  transform: translate3d(0,0,0);
+}
+
+.post {
+  @extend %background-box;
+  @extend %fadeIn;
+  animation-duration: 1s;
+  animation-delay: 0.1s;
+  background: rgba(255, 255, 255, 0.45);
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: auto;
+  padding: .5rem 1rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  .highlight {
+    background: rgba(255, 255 ,255, .5);
+    border-radius: 0.5rem;
+    // margin: 0;
+    overflow: auto;
+  }
+}
