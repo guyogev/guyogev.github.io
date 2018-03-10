@@ -93,7 +93,8 @@ $provide.factory('myHttpInterceptor', ($q, $cacheFactory) => {
 
   const request = (config) => {
     try {
-      // generate a key by serializing & concatenate config params to url, i.e. http://domain.com?a=1&b=2
+      // generate a key by serializing & concatenate config params to url, i.e.
+      // http://domain.com?a=1&b=2
       const key = buildUrl_(config);
       const value = storage_.getItem(key);
       if (value) {
@@ -120,7 +121,8 @@ $provide.factory('myHttpInterceptor', ($q, $cacheFactory) => {
   updateCache_(key, json) {
     if (Date.now() - json.timestamp > CACHE_EXPIRATION_MS_) {
       // Remove the response from cache if its too old.
-      // By default $http will send the request when no response is found in the cache.
+      // By default $http will send the request when no response is found in th
+      // cache.
       cache_.remove(key);
       return;
     }
