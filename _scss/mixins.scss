@@ -37,3 +37,10 @@ $GRAY_35: rgba(255, 255, 255, .35);
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);         
   }
 }
+
+%site-bg {
+  @include coverImage("{{ site.url }}/assets/images/tlv.jpg");
+  filter: blur(3px) sepia(0.15);
+  height: 100%; 
+  transform: translate3d(0,0,0);
+}

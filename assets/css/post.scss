@@ -11,10 +11,8 @@
 .bg-img {
   @include coverImage("{{ site.url }}/assets/images/tlv.jpg");
   @extend %fadeIn;
+  @extend %site-bg;
   animation-duration: 1s;
-  filter: blur(3px) sepia(0.15);
-  height: 100%; 
-  transform: translate3d(0,0,0);
 }
 
 .post-wrapper {
