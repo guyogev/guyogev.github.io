@@ -13,6 +13,11 @@
     {{ content }}
   </body>
 
+  <!-- Google Analytics -->
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
+
   <!-- JS -->
   {% for f in page.js_files %}
     {% capture path %}/assets/js/{{ f }}.js{% endcapture %}
