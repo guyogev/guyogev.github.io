@@ -43,12 +43,9 @@
 }
 
 .type-effect {
-  // overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .2rem solid greenyellow; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  animation: 
-    // typing 1s steps(40, end),
-    blink-caret .75s step-end 7;
+  animation: blink-caret .75s step-end 7;
   animation-fill-mode: both;
 }
 
@@ -90,5 +87,3 @@ $ease-out-quint:cubic-bezier(0.230, 1.000, 0.320, 1.000);
   animation-fill-mode: forwards;
   // animation-direction: reverse;
 }
-
-$ANIMATION_STEP_1: 1s;

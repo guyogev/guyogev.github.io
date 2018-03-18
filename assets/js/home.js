@@ -1,17 +1,3 @@
-// const fadeIn = (element) => {
-//   setTimeout(() => {
-//     element.style.opacity = 1;
-//   }, element.dataset.delay * 1000);
-// }
-
-// const emphasize = (element) => {
-//   setTimeout(() => {
-//     Object.assign(element.style, {
-//       'font-size': '1.6rem',
-//     });
-//   }, element.dataset.delay * 1000);
-// }
-
 const typeEffect = (element) => {
   const text = [...element.innerText];
   element.innerHTML = '';
@@ -25,8 +11,21 @@ const typeEffect = (element) => {
 }
 
 const run = () => {
-  // document.querySelectorAll(".fade-in").forEach(fadeIn);
-  document.querySelectorAll(".typeEffect").forEach(typeEffect);
+  const showAnimations = true;
+  if (showAnimations) {
+    document.querySelectorAll(".typeEffect").forEach(typeEffect);
+  } else {
+    const overrideStyle = document.createElement('style');
+    overrideStyle.type = 'text/css';
+    overrideStyle.innerHTML = `
+    * {
+      animation-delay: 0 !important;
+      animation-name: none !important;
+      opacity: 1 !important;
+    }
+    `;
+    document.getElementsByTagName('head')[0].appendChild(overrideStyle);  
+  }
 };
 
 document.addEventListener("DOMContentLoaded", run);

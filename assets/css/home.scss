@@ -1,6 +1,7 @@
 ---
 ---
 @import "animations";
+@import "extends";
 @import "mixins";
 
 @media (max-width: 768px) {
@@ -11,13 +12,13 @@
   @include coverImage("{{ site.url }}/assets/images/tlv.jpg");
   @extend %fadeIn;
   @extend %site-bg;
-  animation-duration: $ANIMATION_STEP_1;
+  animation-duration: 1s;
 }
 
 .home {
   @extend %background-box;
   @extend %fadeIn;
-  animation-duration: $ANIMATION_STEP_1;
+  animation-duration: 1s;
   bottom: 0;
   display: flex;
   flex-direction: column;
@@ -32,7 +33,6 @@
   
   .screen-wrapper {
     @extend %fadeIn;
-    // @extend %background-box;
     animation-delay: .3s;
     animation-duration: .3s;
     color: #111;
@@ -99,7 +99,7 @@
       .screen-text {
         @extend %fadeIn;
         animation-delay: 6s;
-        animation-direction: .1;
+        // animation-direction: .1;
       }
     }
 
@@ -180,7 +180,6 @@
   
   .my-stack {
     @extend %scaleY;
-    // @extend %background-box;
     animation-delay: 6.2s;
     animation-duration: .8s;
     display: flex;
@@ -248,7 +247,6 @@
   }
 
   .blog {
-    // @extend %background-box;
     @extend %fadeIn;
     animation-delay: 7.1s;
     animation-duration: 1s;
@@ -292,3 +290,8 @@
   }
 }
 
+// * {
+//   animation-delay: 0 !important;
+//   animation-name: none !important;
+//   opacity: 1 !important;
+// }
