@@ -1,6 +1,5 @@
 ---
 ---
-@import "animations";
 @import "extends";
 @import "mixins";
 @import "syntax";
@@ -11,15 +10,10 @@
 
 .bg-img {
   @include coverImage("{{ site.url }}/assets/images/tlv.jpg");
-  @extend %fadeIn;
   @extend %site-bg;
-  animation-duration: 1s;
 }
 
 .post-wrapper {
-  @extend %fadeIn;
-  animation-duration: 1s;
-  animation-delay: 0.1s;
   bottom: 0;
   left: 0;
   overflow: auto;
