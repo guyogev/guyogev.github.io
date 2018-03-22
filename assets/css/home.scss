@@ -15,21 +15,24 @@
   animation-duration: 1s;
 }
 
+.home-wrapper {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
 .home {
   @extend %background-box;
   @extend %fadeIn;
   animation-duration: 1s;
-  bottom: 0;
   display: flex;
   flex-direction: column;
-  left: 0;
   margin: auto;
   max-width: 65rem;
-  overflow: auto;
   padding: .5rem;
-  position: fixed;
-  right: 0;
-  top: 0;
   
   .screen-wrapper {
     @extend %fadeIn;
@@ -263,6 +266,7 @@
       color: initial;
       display: flex;
       margin: .5rem;
+      min-height: 3rem;
       padding: 0.5rem;
       text-decoration: none;
     }
@@ -277,6 +281,7 @@
 
     .post-text {
       width: calc(100% - 4rem);
+      line-height: 1.5rem;
     }
 
     .post-title {

@@ -2,7 +2,7 @@
 layout: post
 title:  "Web browsers performance goodies"
 subtitle: "Stop that jank!"
-date:   2017-12-14 21:29:43 +0200
+date:   2017-10-06 21:29:43 +0200
 css_files: [global, post]
 ---
 As web developers we create amazing apps.  
