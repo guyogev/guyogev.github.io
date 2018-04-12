@@ -69,3 +69,7 @@
 .linkedin-icon {
   @include imgIcon("{{ site.url }}/assets/images/linkedin.png");
 }
+
+.pluralsight-icon {
+  @include imgIcon("{{ site.url }}/assets/images/pluralsight.png");
+}
