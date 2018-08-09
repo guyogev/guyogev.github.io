@@ -1,0 +1,84 @@
+---
+---
+@import "animations";
+@import "extends";
+@import "mixins";
+
+header {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, .56);
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.6rem;
+  align-items: center;
+  padding: 0 1rem;
+
+  a {
+    @extend %unstyled-a;
+    transition: all 150ms;
+    padding: 0 1rem;
+    cursor: pointer;
+  }
+
+  a:hover {
+    border-top: 1px solid black;
+    padding: 0.2rem 1rem 0 1rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+.about {
+  background-image: url("https://i.blogs.es/3818bd/programacion/450_1000.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.16rem;
+    font-size: 2rem;
+    padding: 0 1rem;
+
+  }
+}
+
+.skills {
+  height: 50vh;
+  background: red;
+}
+
+.resume {
+  background: green;
+  height: 50vh;
+}
+
+.blog {
+  background: yellow;
+  height: 50vh;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.44);
+  color: #fff;
+  height: 1.6rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
