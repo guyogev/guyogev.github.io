@@ -10,20 +10,56 @@ css_files: [global, home2]
 <header>
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
-  <a href="#stack">Resume</a>
+  <a href="#resume">Resume</a>
   <a href="#blog">Blog</a>
 </header>
 
 <!-- About -->
 <div class="about" id="about">
+  <div class="about-bg"></div>
   <div class="title">
-    Getting things done.
+    <span>Gets things done.</span>
   </div>
 </div>
 
 <!-- Skills/Stack -->
 <div class="skills" id="skills">
-  skills
+  <div class="sub-title">Skill Set</div>
+  <div class="groups">
+    <div class="group">
+      <div class="skill">
+        <div class="skill-name">Angular JS</div>
+        <div class="level level-1"></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Angular</div>
+        <div class="level level-3"></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">React</div>
+        <div class="level level-3"></div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="skill">
+        <div class="skill-name">Rails</div>
+        <div class="level level-2"></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Phoenix</div>
+        <div class="level level-2"></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">NodeJS</div>
+        <div class="level level-5"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Resume -->

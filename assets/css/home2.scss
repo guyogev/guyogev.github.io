@@ -3,6 +3,8 @@
 @import "animations";
 @import "extends";
 @import "mixins";
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 header {
   display: flex;
@@ -34,40 +36,107 @@ header {
 }
 
 .about {
-  background-image: url("https://i.blogs.es/3818bd/programacion/450_1000.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  height: 75vh;
+  position: relative;
 
+  .about-bg {
+    background-image: url("https://i.blogs.es/3818bd/programacion/450_1000.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    filter: grayscale(80%) blur(5px);
+
+  }
   .title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     text-align: center;
     text-transform: uppercase;
     font-weight: 500;
     color: #fff;
-    letter-spacing: 0.16rem;
-    font-size: 2rem;
+    letter-spacing: 0.26rem;
+    font-size: 4rem;
     padding: 0 1rem;
-
+    font-family: 'Anton', sans-serif;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
   }
 }
 
 .skills {
-  height: 50vh;
-  background: red;
+  height: 75vh;
+  padding: 1rem;
+
+  .sub-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.6px;
+    padding: .5rem;
+  }
+
+  .groups {
+    display: flex;
+  }
+
+  .group {
+    flex: 1;
+  }
+
+  .skill {
+    display: flex;
+    align-items: center;
+  }
+
+  .skill-name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: .5rem;
+    width: 8rem;
+  }
+
+  .level {
+    flex: 1;
+    height: 1rem;
+    box-shadow: 0px 2px 4px 1px #9d9d9e;
+  }
+
+  .level-1 {
+    @include gradToRight(94, 111, 204, .9);
+  }
+
+  .level-2 {
+    @include gradToRight(94, 111, 204, 0.7);
+  }
+
+  .level-3 {
+    @include gradToRight(94, 111, 204, 0.5);
+  }
+
+  .level-4 {
+    @include gradToRight(94, 111, 204, 0.3);
+  }
+
+  .level-5 {
+    @include gradToRight(94, 111, 204, 0.1);
+  }
 }
 
 .resume {
   background: green;
-  height: 50vh;
+  height: 75vh;
 }
 
 .blog {
   background: yellow;
-  height: 50vh;
+  height: 75vh;
 }
 
 footer {
