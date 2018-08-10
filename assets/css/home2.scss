@@ -35,15 +35,20 @@ header {
   }
 }
 
+.sub-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.6px;
+  padding: .5rem;
+}
+
 .about {
   height: 75vh;
   position: relative;
 
   .about-bg {
-    background-image: url("https://i.blogs.es/3818bd/programacion/450_1000.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include coverImage("http://uchilegko.info/images/downloaded/1520672316_programmnyy-kod.jpg");
     height: 100%;
     width: 100%;
     filter: grayscale(80%) blur(5px);
@@ -69,23 +74,20 @@ header {
 }
 
 .skills {
-  height: 75vh;
   padding: 1rem;
-
-  .sub-title {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: 0.6px;
-    padding: .5rem;
-  }
+  max-width: 64rem;
+  margin: auto;
 
   .groups {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .group {
     flex: 1;
+    box-shadow: 0px 2px 4px 1px rgba(170, 170, 170, 0.38);
+    padding: 1rem;
+    margin: 1rem;
   }
 
   .skill {
@@ -106,32 +108,121 @@ header {
     flex: 1;
     height: 1rem;
     box-shadow: 0px 2px 4px 1px #9d9d9e;
+    padding: .2rem;
+    font-style: italic;
+    color: #fff;
+    line-height: .8rem;
+    font-size: .8rem;
+    align-items: center
   }
 
   .level-1 {
     @include gradToRight(94, 111, 204, .9);
+
+    &:before {
+      content: "5 / 5";
+    }
   }
 
   .level-2 {
     @include gradToRight(94, 111, 204, 0.7);
+
+    &:before {
+      content: "4 / 5";
+    }
   }
 
   .level-3 {
     @include gradToRight(94, 111, 204, 0.5);
+
+    &:before {
+      content: "3 / 5";
+    }
   }
 
   .level-4 {
     @include gradToRight(94, 111, 204, 0.3);
+
+    &:before {
+      content: "2 / 5";
+    }
   }
 
   .level-5 {
     @include gradToRight(94, 111, 204, 0.1);
+
+    &:before {
+      content: "1 / 5";
+    }
   }
 }
 
 .resume {
-  background: green;
-  height: 75vh;
+  border-radius: 4px;
+  background: rgba(170, 170, 170, 0.18);
+  padding: 1rem;
+  max-width: 64rem;
+  margin: auto;
+
+  .groups {
+
+  }
+
+  .group {
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0px 2px 4px 1px rgba(170, 170, 170, 0.38);
+  }
+
+  .bullet {
+    p {
+      margin: 1rem;
+    }
+  }
+
+
+  .bullet-title {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      background: #FFF;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50px;
+      padding: 1rem;
+      margin: .5rem;
+    }
+
+    .spectory {
+      @include coverImage("https://www.spectory.com/favicon.png");
+    }
+
+    .google {
+      @include coverImage("https://cdn1.iconfinder.com/data/icons/company-identity/100/new-google-favicon-128.png");
+    }
+
+    .bgu {
+      @include coverImage("https://pbs.twimg.com/profile_images/509304330667585536/uDo6qU3J_400x400.png");
+    }
+
+    .date {
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: 0.2px;
+
+    }
+
+    .position {
+      font-weight: bold;
+      letter-spacing: 0.2px;
+    }
+
+    .location {
+      letter-spacing: 0.2px;
+      font-family: 'Anton', sans-serif;
+    }
+  }
 }
 
 .blog {
