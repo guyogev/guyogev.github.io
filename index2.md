@@ -23,32 +23,32 @@ css_files: [global, home2]
 </div>
 
 <!-- Skills/Stack -->
-<div class="skills" id="skills">
+<div class="skills anchor-offset" id="skills">
   <div class="sub-title">Skill Set</div>
   <div class="groups">
     <div class="group">
       <div class="skill">
-        <div class="skill-name">Angular JS</div>
+        <div class="skill-name">JavaScript</div>
         <div class="level level-1"></div>
       </div>
 
       <div class="skill">
-        <div class="skill-name">Angular</div>
-        <div class="level level-3"></div>
+        <div class="skill-name">Sass/Css</div>
+        <div class="level level-2"></div>
       </div>
 
       <div class="skill">
-        <div class="skill-name">React</div>
-        <div class="level level-3"></div>
+        <div class="skill-name">Ruby</div>
+        <div class="level level-2"></div>
       </div>
 
       <div class="skill">
-        <div class="skill-name">Jekyll</div>
-        <div class="level level-3"></div>
+        <div class="skill-name">Elixir</div>
+        <div class="level level-2"></div>
       </div>
 
       <div class="skill">
-        <div class="skill-name">Ionic</div>
+        <div class="skill-name">SQL</div>
         <div class="level level-5"></div>
       </div>
     </div>
@@ -74,27 +74,27 @@ css_files: [global, home2]
   <div class="groups">
     <div class="group">
       <div class="skill">
-        <div class="skill-name">JavaScript</div>
+        <div class="skill-name">Angular JS</div>
         <div class="level level-1"></div>
       </div>
 
       <div class="skill">
-        <div class="skill-name">Sass/Css</div>
-        <div class="level level-2"></div>
+        <div class="skill-name">Angular</div>
+        <div class="level level-3"></div>
       </div>
 
       <div class="skill">
-        <div class="skill-name">Ruby</div>
-        <div class="level level-2"></div>
+        <div class="skill-name">React</div>
+        <div class="level level-3"></div>
       </div>
 
       <div class="skill">
-        <div class="skill-name">Elixir</div>
-        <div class="level level-2"></div>
+        <div class="skill-name">Jekyll</div>
+        <div class="level level-3"></div>
       </div>
 
       <div class="skill">
-        <div class="skill-name">SQL</div>
+        <div class="skill-name">Ionic</div>
         <div class="level level-5"></div>
       </div>
     </div>
@@ -190,7 +190,7 @@ css_files: [global, home2]
   </div>
 </div>
 
-<div class="social">
+<div class="social anchor-offset">
   <div class="sub-title">Social</div>
   <div class="links">
     <a href="https://github.com/guyogev" target="blank" class="logo">
@@ -220,13 +220,16 @@ css_files: [global, home2]
   </div>
 </div>
 
-<!-- Blog
-<div class="blog" id="blog">
-  blog
-</div> -->
-
-<footer>
-  <div class="links">
-
-  </div>
-</footer>
+<!-- Blog -->
+<div class="blog anchor-offset" id="blog">
+  <div class="sub-title">Blog</div>
+  {% for post in site.posts %}
+    <a href="{{ post.url }}">
+      <div class="date">{{ post.date | date_to_string }}</div>
+      <div class="post-text">
+        <div class="post-title">{{ post.title }}</div>
+        <div class="post-subtitle">{{ post.subtitle }}</div>
+      </div>
+    </a>
+  {% endfor %}
+</div>
