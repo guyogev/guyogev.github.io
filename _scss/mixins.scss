@@ -14,3 +14,7 @@
   @include coverImage($url);
   @include squre($size);
 }
+
+@mixin gradToRight($r, $g, $b, $o) {
+  background: linear-gradient(to right, rgba($r, $g, $b, 1), rgba($r, $g, $b, $o));
+}
