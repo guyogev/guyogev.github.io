@@ -212,13 +212,13 @@ header {
 }
 
 .resume {
-  background: rgba(170, 170, 170, 0.28);
   border-radius: 4px;
   margin: auto;
   max-width: 64rem;
   padding: 1rem;
 
   .group {
+    background: rgba(170, 170, 170, 0.14);
     box-shadow: 0px 2px 4px 1px rgba(170, 170, 170, 0.78);
     margin: 1rem;
     padding: 1rem;
@@ -322,7 +322,6 @@ header {
 }
 
 .blog {
-  background: rgba(170, 170, 170, 0.28);
   border-radius: 4px;
   padding: 1rem;
   margin: auto;
@@ -331,10 +330,11 @@ header {
   a {
     @extend %unstyled-a;
     align-items: center;
-    box-shadow: 0px 2px 4px 1px rgba(170, 170, 170, 0.78);
+    box-shadow: 0px 2px 4px 1px rgba(170, 170, 170, 0.28);
     display: flex;
     margin: 1rem;
     padding: 1rem;
+    transition: box-shadow 150ms;
 
     &:hover {
       box-shadow: 0px 2px 4px 1px rgba(170, 170, 170, 0.88);
