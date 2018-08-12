@@ -145,14 +145,14 @@ js_files: [index]
           organizations worldwide.
         </p>
         <p>
-          As a junior, and later on a senior developer, my role included all
+          As a junior, and later on as a senior developer, my role included all
           aspects of software development such as design, development, profiling
           and maintenance.
         </p>
         <p>
           In addition to the regular development tasks, I also led the company
           'On Boarding' program, which is a 4 weeks training for junior web
-          developers, jump starting their carrier.
+          developers, jump-starting their carrier.
         </p>
         <p>
           I played major part at the company DevOps, which included designing
