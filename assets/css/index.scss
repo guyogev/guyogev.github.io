@@ -6,6 +6,16 @@
 @import url('https://fonts.googleapis.com/css?family=Anton');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 body {
   height: auto;
   padding-bottom: 1rem;
@@ -26,18 +36,27 @@ header {
   top: 0;
   z-index: 999;
 
-  a {
-    @extend %unstyled-a;
+  @media only screen and (max-width: 425px) {
+    padding: 0;
+  }
+
+  .menu {
     cursor: pointer;
     padding: 0 1rem;
     transition: all 150ms;
+
+    @media only screen and (max-width: 425px) {
+      padding: 0.2rem;
+      font-size: .8rem;
+    }
+
+    &:hover {
+      border-top: 1px solid black;
+      letter-spacing: 0.1rem;
+      padding: 0.2rem 1rem 0 1rem;
+    }
   }
 
-  a:hover {
-    border-top: 1px solid black;
-    letter-spacing: 0.1rem;
-    padding: 0.2rem 1rem 0 1rem;
-  }
 }
 
 .sub-title {
@@ -75,6 +94,36 @@ header {
     text-transform: uppercase;
     top: 0;
     width: 100%;
+  }
+
+  .first-text {
+    position: absolute;
+    animation: fadeOut .100s forwards;
+    animation-delay: 2s;
+  }
+
+  .second-text {
+    position: absolute;
+  }
+
+  .word {
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn .16s forwards;
+    animation-delay: 2s;
+  }
+
+  .word-1 {
+    animation-delay: 2.250s;
+  }
+  .word-2 {
+    animation-delay: 2.500s;
+  }
+  .word-3 {
+    animation-delay: 2.750s;
+  }
+  .word-4 {
+    animation-delay: 3.5s;
   }
 }
 
