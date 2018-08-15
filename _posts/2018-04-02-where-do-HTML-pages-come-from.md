@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Where Do HTML Pages Comes From?"
+title:  "Where Do HTML Pages Come From?"
 subtitle: "Rendering location matters."
 date:   2018-08-15 14:29:43 +0200
 css_files: [global, post]
@@ -71,7 +71,7 @@ however choosing the wrong tools usually means we are solving issues that
 we could have avoided.
 
 As rule of thumb, I feel that the more complex the UX is, the stronger is the
-indication we should choose SCR.
+indication we should choose CSR.
 
 At one end of the scale there are static pages:
 - Everything on the page is predefined.
