@@ -72,7 +72,7 @@ header {
   position: relative;
 
   .about-bg {
-    @include coverImage("http://uchilegko.info/images/downloaded/1520672316_programmnyy-kod.jpg");
+    @include coverImage("{{ site.url }}/assets/images/code-bg.jpg");
     filter: grayscale(60%) blur(5px);
     height: 100%;
     width: 100%;
