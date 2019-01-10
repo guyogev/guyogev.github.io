@@ -6,13 +6,23 @@ date:   2018-12-28 14:29:43 +0200
 css_files: [global, post]
 ---
 
+A while back, I wrote about [improving web pages performance JS optimizing]({% post_url 2017-10-06-web-browsers-performance-goodies %}).
+Finding which parts of the app require optimization, and what exactly is the source of the issue
+can be challenging.
+
+At this post, I'll try to introduce some tools and routines that can help
+pin point the issue, and quickly testing our solution.
+
 ## Performance matters
 
-Retaining users is hard. This days users expect things to be fast and smooth. [Google's study](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/) shows even a few seconds of loading time lag can make the *session duration* drop and *bounce rate* climb.
+First, why should even care?
+
+Well, retaining users is hard.
+This days users expect things to be fast and smooth. [Google's study](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/) shows even a few seconds of loading time lag can make the *session duration* drop and *bounce rate* climb.
 
 Even if we managed to load the page fairly quickly, [bad UX](https://medium.com/@slhenty/ui-response-times-acec744f3157) is not easily forgiven.
 
-In short **Performance** == **Money**.
+If we can retain users, we loose business. In short **Performance** == **Money**.
 
 ### Why measure
 
