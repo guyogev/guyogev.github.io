@@ -15,7 +15,7 @@ pin point the issue, and quickly testing our solution.
 
 ## Performance matters
 
-First, why should even care?
+First, why should we even care?
 
 Well, retaining users is hard.
 This days users expect things to be fast and smooth. [Google's study](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/) shows even a few seconds of loading time lag can make the *session duration* drop and *bounce rate* climb.
@@ -30,7 +30,7 @@ As [Adam Savage said](https://www.reddit.com/r/mythbusters/comments/3wgqgv/the_o
 > *Remember kids, the only difference between screwing around and science, is writing it down*.
 
 A user *"feels"* the load time is long, or scroll is sluggish.
-Measuring allows us to translate such*"feelings"* into hard metrics.
+Measuring allows us to translate such *"feelings"* into hard metrics.
 In other words, it shifts us from the *qualitative* discussion to a *quantitative* one.
 
 Measurements allows us to define the problem
@@ -47,11 +47,11 @@ And even better, to define standards we wish to keep (maybe even protect by CI a
 When analyzing a page, I like to start by running an audit.
 It shed light on most common issues that have a very good effort-to-value ratio.
 
-Chrome dev-tools *Audit* tab can generates a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) report, but I find [webpagetest](https://www.webpagetest.org) more powerful scene
+Chrome dev-tools *Audit* tab can generates a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) report, but I find [webpagetest](https://www.webpagetest.org) more powerful because
 
 - It can run on many devices / browsers.
-- Allow testing from a different geographic location.
-- Record screen casts and screenshots
+- Allows testing from a different geographic locations.
+- Records screen casts and screenshots
 - Includes [lighthouse](https://www.webpagetest.org/forums/showthread.php?tid=14876) audit.
 
 The downside of an audit is that it only cover the page load time. It can't
@@ -75,11 +75,11 @@ as a plugin/extension, that would add functionality to the native browser (i.e. 
 Those tools allow developers to observe how the browser runs the code, and more importantly,
 change it and see the impact immediately, making the debug cycle very short.
 
-This days such dev tools are embedded natively at all major browsers.
+This days such dev tools are embedded natively in all major browsers.
 
 ### Measuring performance via Chrome's dev-tools
 
-Chrome dev-tools offer many hidden gems. But before we dig into those, its important that we understand what they tell us. We should understand what concepts such as *FPS* or *jank* means,
+Chrome dev-tools offer many hidden gems. But before we dig into those, it is important that we understand what they tell us. We should understand what concepts such as *FPS* or *jank* means,
 and know how the browser execute the code we feed into it. I highly recommend [this tutorial](https://developers.google.com/web/fundamentals/performance/rendering/)
 
     Tips
@@ -88,7 +88,7 @@ and know how the browser execute the code we feed into it. I highly recommend [t
 
 ### Real time monitors
 
-Real time monitors help us understand how user's action affect the UI and its performance impact.
+Real time monitors help us understand how user's action affect the UI and it's performance impact.
 
 - **FPS Meter** shows frame rate over time and GPU usage.
 - **Paint rectangles** add noticeable green flash effect to areas that are being repainted.
@@ -109,9 +109,11 @@ shows which parts of the page is being repainted, and the impact on the monitors
 </p>
 ## Console
 
-Many developers use only a fraction of the console abilities, but we can [travel pretty deeply down this rabbit hole](https://medium.freecodecamp.org/how-to-get-the-most-out-of-the-javascript-console-b57ca9db3e6d).
+Many developers use only a fraction of the console abilities, but we can [travel pretty deeply down that rabbit hole](https://medium.freecodecamp.org/how-to-get-the-most-out-of-the-javascript-console-b57ca9db3e6d).
 
-Setting the logs level to *verbose* will print common performance violations warning that are detected by the browser. For example At next screenshots, the last log entry shows a *setTimeout* callback took to long to completed.
+Setting the logs level to *verbose* will print common performance violations warning that are detected by the browser.
+
+For example At next screenshots, the last log entry shows a *setTimeout* callback took to long to completed.
 
 <p align="center" class="viz-wrapper">
   <img src="/assets/images/performance-and-devtools/console.png"/>
@@ -119,7 +121,7 @@ Setting the logs level to *verbose* will print common performance violations war
 
 ### Network
 
-While evaluating our app performance, its important to simulate our [end user environment](http://www.speedtest.net/global-index) as closely as possible. Things might works smoothly at the office with our high speed cable connection, but what about users with a slow G3 network?
+While evaluating our app performance, it is important to simulate our [end user environment](http://www.speedtest.net/global-index) as closely as possible. Things might works smoothly at the office with our high speed cable connection, but what about users with a slow G3 network?
 
 Network tab allow us to do just that - test and monitor the page under simulated network configuration.
 
@@ -134,18 +136,18 @@ Another nice feature is **Coverage** that exposes dead code that can & should be
 </p>
 
 **Request blocking** allows blacklisting specific files/domains.
-For example, files we can block files with low coverage, and see its impact immediately.
+For example, files we can block files with low coverage, and see it's impact immediately.
 
 ### Source
 
-Aside from the obvious features of *file-viewer* and *debugger*, source tab has some useful utils
+Aside from the obvious features of *file-viewer* and *debugger*, source tab has some useful utils.
 
 **Network** shows all resources that were loaded by the page.
 
 **Snippets** allows creating persistent code blocks, which can save repeated typing while debugging from the console.
 
 In my view, the most powerful tool is **overrides**, which allows loading a local copy of a resource
-from our file system. This allows us to use dev-tools as an IDE. Its an extremely fast way
+from our file system. This allows us to use dev-tools as an IDE. It is an extremely fast way
 to test code changes, no need to go through a full build-deploy cycle.
 
 ### Performance
@@ -204,12 +206,12 @@ Here are a few examples.
 At this routine
 
 1. Focus on **performance warning indications**.
-2. Zoom on the area, search for the JS **call stack** root, and its file.
+2. Zoom on the area, search for the JS **call stack** root, and it's file.
 3. We find the file **network** request
 4. **Block** the request or all requests from the same domain
 
-At the next screencast, we pin point *pub_ads_impl.js* script as a bottle neck, and block its
-its domain.
+At the next screencast, we pin point *pub_ads_impl.js* script as a bottle neck, and block it's
+domain.
 
 <p class="video-container">
   <iframe src="https://www.youtube.com/embed/sW7n9ImFNYk"
@@ -233,7 +235,7 @@ Now that we contained the issue, we can decide how to handle it (remove, replace
 At this routine
 
 1. Slowly go over the recorded **snapshots**, looking for sharp changes.
-2. Find the root **element** on the DOM.
+2. Find the faulty **element** on the DOM.
 3. Find the **source** file the applies the element CSS rules.
 4. **Override** the file.
 5. Make **persistent changes** to the local file.
