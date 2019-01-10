@@ -166,7 +166,7 @@ js_files: [index]
         <div class="bullet-title">
           <div class="logo google"></div>
           <div>
-            <span class="date">2017 - 18: </span>
+            <span class="date">2017 - Today: </span>
             <span class="position">Front End Developer</span>
             <span class="location">@Google TLV</span>
             <span>(Vendor by Spectory)</span>
