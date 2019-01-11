@@ -251,6 +251,10 @@ Tightening the banner CSS class eliminates the issue.
   </iframe>
 </p>
 
+<hr>
+
+### Summary
+
 Thats all we'll cover at this post, however dev-tools has a lot more to offer.
 
 Mastering it can make a very powerful developer, and make huge impact on the project bottom line.
