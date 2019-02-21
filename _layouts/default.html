@@ -6,7 +6,7 @@
   {% include global_styles.html %}
   {% for f in page.css_files %}
     {% capture path %}/assets/css/{{ f }}.css{% endcapture %}
-    <link rel="stylesheet" href={{ path | absolute_url }}>
+    <link rel="stylesheet" href={{ path | relative_url }}>
   {% endfor %}
 
   <body>
@@ -21,7 +21,7 @@
   <!-- JS -->
   {% for f in page.js_files %}
     {% capture path %}/assets/js/{{ f }}.js{% endcapture %}
-    <script src={{ path | absolute_url }}></script>
+    <script src={{ path | relative_url }}></script>
   {% endfor %}
 
 </html>
