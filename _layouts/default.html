@@ -7,7 +7,7 @@
   {% for f in page.css_files %}
     {% capture path %}/assets/css/{{ f }}.css{% endcapture %}
     <link rel="stylesheet" href={{ path | absolute_url }}>
-  {% endfor %}  
+  {% endfor %}
 
   <body>
     {{ content }}

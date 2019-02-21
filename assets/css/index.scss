@@ -3,8 +3,6 @@
 @import "animations";
 @import "extends";
 @import "mixins";
-@import url('https://fonts.googleapis.com/css?family=Anton');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -73,7 +71,6 @@ header {
 
   .about-bg {
     @include coverImage("{{ site.url }}/assets/images/code-bg.jpg");
-    filter: grayscale(60%) blur(5px);
     height: 100%;
     width: 100%;
 
