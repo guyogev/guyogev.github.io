@@ -7,7 +7,7 @@ name: home
 css_files: [global, index]
 js_files: [index]
 ---
-<link rel="preload" href="{{ site.url }}/assets/images/code-bg.jpg" as="image">
+<link rel="preload" href="/assets/images/code-bg.jpg" as="image">
 
 <header>
   <span class="menu" onclick="jumpTo('about')">About</span>

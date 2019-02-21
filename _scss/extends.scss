@@ -24,7 +24,7 @@ $GRAY_35: rgba(255, 255, 255, .35);
 }
 
 %site-bg {
-  @include coverImage("{{ site.url }}/assets/images/tlv.jpg");
+  @include coverImage("/assets/images/tlv.jpg");
   filter: blur(3px) sepia(0.15);
   height: 100%;
   transform: translate3d(0,0,0);

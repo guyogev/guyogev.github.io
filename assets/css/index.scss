@@ -70,7 +70,7 @@ header {
   position: relative;
 
   .about-bg {
-    @include coverImage("{{ site.url }}/assets/images/code-bg.jpg");
+    @include coverImage("/assets/images/code-bg.jpg");
     height: 100%;
     width: 100%;
 
