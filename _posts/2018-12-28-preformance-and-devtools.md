@@ -3,7 +3,7 @@ layout: post
 title:  "Performance and DevTools"
 subtitle: "Profiling like a pro"
 date:   2018-12-28 14:29:43 +0200
-css_files: [global, post]
+css_files: []
 ---
 
 A while back, I wrote about [improving web pages performance JS optimizing]({% post_url 2017-10-06-web-browsers-performance-goodies %}).

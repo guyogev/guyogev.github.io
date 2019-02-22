@@ -3,60 +3,60 @@ layout: post
 title:  "Performance Boost With Client Side Caching"
 subtitle: "Reducing network & CPU usage with cache & storage."
 date:   2018-02-04 21:29:43 +0200
-css_files: [global, post]
+css_files: []
 ---
 
-Network caching is a great way to improve apps performance.  
-1\. It reduces bandwidth usage.  
-2\. It reduces CPU usage since there is less data to process.  
+Network caching is a great way to improve apps performance.
+1\. It reduces bandwidth usage.
+2\. It reduces CPU usage since there is less data to process.
 3\. It reduces redundant computations, i.e. process & render the same data multiple times.
 
-Our goal is to minimize the number of requests the app makes.  
+Our goal is to minimize the number of requests the app makes.
 For example, consider this scenario by our user:
 
 *   Visit the `profile` page (An GET request is made to load the user details).
 *   Go back to the `home` page.
 *   Return to `profile` page.
 
-Every visit to the `profile` page loads the data, renders it to screen, bind events... a lot can happen.  
+Every visit to the `profile` page loads the data, renders it to screen, bind events... a lot can happen.
 Chances are the GET response at the first and second visit to `profile` page is exactly the same.
 
-With SPA, is very common to face such issues.  
-We can minimize each visit load by following a strict architecture,  
+With SPA, is very common to face such issues.
+We can minimize each visit load by following a strict architecture,
 but as the project grows it is natural to see more and more performance issues.
 
-**The proper way to fix such issues is by handling the tech debt and better manage the app state.**  
+**The proper way to fix such issues is by handling the tech debt and better manage the app state.**
 But if you need an easy win, and fast, client side caching maybe a good option.
 
 ### Server caching
 
-HTTP supports [caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching).  
-We won't cover this subject here.  
+HTTP supports [caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching).
+We won't cover this subject here.
 It is advisable that you cache static assets. It has drastic impact on the app & network usage.
 
 ### Service workers
 
-[Service workers](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker-slides) is also a great option,  
+[Service workers](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker-slides) is also a great option,
 especially if you want to build a PWA. It can be implemented at any framework, however it might be hard to integrate into mature apps.
 
 ### AngularJS default cache
 
-AngularJS $http service [supports caching](https://docs.angularjs.org/api/ng/service/$http#caching) with a simple flag setting.  
-We can cache all requests by configuring the `$httpProvider.defaults.cache` flag,  
+AngularJS $http service [supports caching](https://docs.angularjs.org/api/ng/service/$http#caching) with a simple flag setting.
+We can cache all requests by configuring the `$httpProvider.defaults.cache` flag,
 or specific requests i.e. `$http({url: '...', cache: true})`.
 
 ### Enhanced caching
 
-AngularJS caching does great job out of the box. The down side is that the cache is in-memory.  
+AngularJS caching does great job out of the box. The down side is that the cache is in-memory.
 Whenever the app reloads, the cache is cleared, so the performance boost doesn't affect the app load time.
 
-We can enhance requests `config.cache` by storing the data in persistent memory, i.e. [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localstorage) or [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)  
+We can enhance requests `config.cache` by storing the data in persistent memory, i.e. [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localstorage) or [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
 But first we need to talk about `middlewares`.
 
-Very broadly, a `middleware` is a module can be place between to parts of the app, and has access to the data stream between the two.  
+Very broadly, a `middleware` is a module can be place between to parts of the app, and has access to the data stream between the two.
 For example, service-workers allow us to add a middleware on top the browser's `fetch` module.
 
-At our case, we want to place a middleware between AngularJS $http & the browser [xmlhttprequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).  
+At our case, we want to place a middleware between AngularJS $http & the browser [xmlhttprequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
 This will allow us to access request before it is sent, and an response before its processed.
 
 Luckily for us, AngularJS supports such middelwares out of the box - [interceptors](https://docs.angularjs.org/api/ng/service/$http#interceptors).

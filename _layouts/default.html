@@ -2,11 +2,28 @@
 <html lang="en">
 
   {% include head.html %}
-  <!-- Styles -->
-  {% include global_styles.html %}
+  <!-- Preloads -->
+  <link href="https://fonts.gstatic.com/s/anton/v10/1Ptgg87LROyAm3Kz-C8.woff2" rel="font">
+  <link href="https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2" rel="font">
+
+  <!-- Inline styles -->
+  {% capture fonts %}
+    {% include inline_fonts.scss %}
+  {% endcapture %}
+  <style>
+    {{ fonts | scssify }}
+  </style>
+
+  <!-- Additional styles -->
   {% for f in page.css_files %}
     {% capture path %}/assets/css/{{ f }}.css{% endcapture %}
     <link rel="stylesheet" href={{ path | relative_url }}>
+  {% endfor %}
+
+  <!-- Deferred JS -->
+  {% for f in page.js_files %}
+    {% capture path %}/assets/js/{{ f }}.js{% endcapture %}
+    <script defer src={{ path | relative_url }}></script>
   {% endfor %}
 
   <body>
@@ -17,11 +34,5 @@
   {% if jekyll.environment == 'production' and site.google_analytics %}
     {% include google-analytics.html %}
   {% endif %}
-
-  <!-- JS -->
-  {% for f in page.js_files %}
-    {% capture path %}/assets/js/{{ f }}.js{% endcapture %}
-    <script src={{ path | relative_url }}></script>
-  {% endfor %}
 
 </html>

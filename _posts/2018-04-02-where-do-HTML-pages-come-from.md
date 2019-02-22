@@ -3,7 +3,7 @@ layout: post
 title:  "Where Do HTML Pages Come From?"
 subtitle: "Rendering location matters."
 date:   2018-08-15 14:29:43 +0200
-css_files: [global, post]
+css_files: []
 ---
 
 Web apps come in all shapes and sizes, but they all have one thing in common -

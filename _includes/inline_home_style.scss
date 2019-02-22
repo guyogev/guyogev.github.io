@@ -1,9 +1,29 @@
----
----
-@import "animations";
-@import "extends";
-@import "mixins";
+// Mixins
+@mixin coverImage($url) {
+  background-image: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+@mixin gradToRight($r, $g, $b, $o) {
+  background: linear-gradient(to right, rgba($r, $g, $b, 1), rgba($r, $g, $b, $o));
+}
+
+// Extends
+%unstyled-a {
+  text-decoration: none;
+  color: inherit;
+  outline: 0;
+
+  &:hover, &:visited, &:focus, &:active  {
+    text-decoration: none;
+    color: inherit;
+    outline: 0;
+  }
+}
+
+// Keyframes
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -12,6 +32,24 @@
 @keyframes fadeOut {
   0% { opacity: 1; }
   100% { opacity: 0; }
+}
+
+/******************************************************************************/
+
+body, html {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  line-height: 1.15;
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  border-style: none;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {

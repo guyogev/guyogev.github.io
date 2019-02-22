@@ -1,6 +1,18 @@
 ---
 layout: default
 ---
+  <!-- Inline styles -->
+{% capture styles %}
+  {% include inline_posts_style.scss %}
+{% endcapture %}
+{% capture inline_code_syntax %}
+  {% include inline_code_syntax.scss %}
+{% endcapture %}
+<style>
+  {{ styles | scssify }}
+  {{ inline_code_syntax | scssify }}
+</style>
+
 <div class="bg-img"></div>
 <article class="post-wrapper h-entry home" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="post">

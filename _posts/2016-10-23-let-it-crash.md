@@ -3,7 +3,7 @@ layout: post
 title:  "Let It Crash!"
 subtitle: "Elixir's supervision trees"
 date:   2016-10-23 21:29:43 +0200
-css_files: [global, post]
+css_files: []
 ---
 
 At this blog post we'll discuses one of Elixir greatest features - Supervisors & Supervision trees, the engine behind Elixir's `let it crash` motto.
@@ -14,7 +14,7 @@ A supervisor is a process which watches other processes, which we refer to as ch
 
 ### What is a supervision tree?
 
-Supervisors are used to build a hierarchical process structure called a supervision tree.  
+Supervisors are used to build a hierarchical process structure called a supervision tree.
 Supervision trees are a nice way to structure fault-tolerant applications.
 
 ### supervision strategies
@@ -174,7 +174,7 @@ iex(1)> App.one_for_one
 11:45:27.305 [debug] Starting App.Child with name child_10!
 
 11:45:27.311 [info]  'child_10' says hey!
-  
+
 11:45:28.314 [info]  'child_9' says hey!
 
 11:45:29.315 [info]  'child_8' says hey!
@@ -300,10 +300,10 @@ This time, whenever a process dies, all child process that were spawned **after*
 
 ### Conclusion
 
-Elixir Supervision Trees allow us to create robust applications, with very little code.  
+Elixir Supervision Trees allow us to create robust applications, with very little code.
 Instead of worrying about each process and make sure it never fails, let a supervisor watch it, and simply **let it crash**.
 
 Links:
 
-- The full code is aviable at [github](https://github.com/guyogev/elixir_supervisor_demo)  
+- The full code is aviable at [github](https://github.com/guyogev/elixir_supervisor_demo)
 - [Supervisor docs](http://elixir-lang.org/getting-started/mix-otp/supervisor-and-application.html)

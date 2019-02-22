@@ -3,24 +3,24 @@ layout: post
 title:  "JWT Like AC/DC"
 subtitle: "Web Tokens Rock N Roll."
 date:   2016-12-18 21:29:43 +0200
-css_files: [global, post]
+css_files: []
 ---
 ### JWT
 
 JSON Web Token is a self-contained way for securely transmitting information between parties as a JSON object.
 
-Since JWT can encode users data, its a great way to handle API authentication & authorization.  
-However, JWT are stateless, so we can't use standard Sessions. But don't despair, with a little bit of configuration,  
+Since JWT can encode users data, its a great way to handle API authentication & authorization.
+However, JWT are stateless, so we can't use standard Sessions. But don't despair, with a little bit of configuration,
 we can manage all our authentication & authorization requirements in a single place.
 
 ### Passport
 
-Passport is authentication middleware. It is designed to serve a singular purpose: authenticate requests.  
+Passport is authentication middleware. It is designed to serve a singular purpose: authenticate requests.
 Authentication is done by defining "strategies".
 
 ### What we're gonna do?
 
-We'll secure our app endpoints with JWT. Once a user authenticate himself by supplying password, we'll generate a JWT for him.  
+We'll secure our app endpoints with JWT. Once a user authenticate himself by supplying password, we'll generate a JWT for him.
 The user can then interact with our API by supplying this token at his requests headers/cookies.
 
 I assume you already familiar with Express, Sequelize, Mocha & Chai.
@@ -175,9 +175,9 @@ export default router;
 
 We now can perform GET requests, and view our users data, but so does everyone else. Not ideal...
 
-We want to identify our users by email/password. Before creating & updating users we'll  
-- make sure emails are lowercase  
-- make sure emails are unique  
+We want to identify our users by email/password. Before creating & updating users we'll
+- make sure emails are lowercase
+- make sure emails are unique
 - hash passwords
 
 ```javascript
@@ -240,7 +240,7 @@ module.exports = function(sequelize, DataTypes) {
 
 ### Password Authentication Strategy
 
-We'll use `passport-local` to define our by_password strategy.  
+We'll use `passport-local` to define our by_password strategy.
 This strategy receives email/password as input, and trys to validate the user.
 
 ```javascript
@@ -294,8 +294,8 @@ module.exports = (app) => {
 };
 ```
 
-Now that we can authenticate users, we want to generate JWT tokens for for them.  
-In this example, we just encode the user id, by we can encode additional data  
+Now that we can authenticate users, we want to generate JWT tokens for for them.
+In this example, we just encode the user id, by we can encode additional data
 (for example, his permissions/role at our system, token expiry...)
 
 ```javascript
@@ -349,10 +349,10 @@ router.post('/authenticate', passport.authenticate('by_password'), authControlle
 
 ### JWT Authentication Strategy
 
-Passport was kind to us, and supplied `ExtractJwt.fromAuthHeader` to extract the JWT token from requests header.  
+Passport was kind to us, and supplied `ExtractJwt.fromAuthHeader` to extract the JWT token from requests header.
 It assumes client will add the token in the `Authorization` header with the value `JWT <...token...>`
 
-One important note, is that after we decode the JWT token, we do not pass that as our user object.  
+One important note, is that after we decode the JWT token, we do not pass that as our user object.
 We fetch the latest user data from DB, incase the token is out of date (for example, the user was deleted by system admin)
 
 ```javascript
@@ -398,15 +398,15 @@ router.get('/user/index', passport.authenticate('jwt'), userController.index);
 
 ### Cookie JWT Authorization
 
-Our jwt strategy is great for API. It supply all the protection we have from the standard API tokens system,  
+Our jwt strategy is great for API. It supply all the protection we have from the standard API tokens system,
 with the advantages of JWT encoded data (such as permissions, expiry).
 
-However, this doesn't help us much when creating standard Ajax requests from the webapp.  
+However, this doesn't help us much when creating standard Ajax requests from the webapp.
 It forces us to add Authorization header to every request at the client side.
 
 We can avoid that if we'll store the JWT token on the browser cookies.
 
-Luckily, passport is very modular, and we can expand our jwt strategy to do just that.  
+Luckily, passport is very modular, and we can expand our jwt strategy to do just that.
 Our strategy will look for JWT token on the request header, if not found, it will search it on our cookie.
 
 ```javascript
@@ -426,8 +426,8 @@ Our strategy will look for JWT token on the request header, if not found, it wil
 
 ### Testing
 
-Thats it, we can now use tools such as cUrl or Postman to check our setup:  
-- POST `/authenticate` with email/password params should return a JWT token.  
+Thats it, we can now use tools such as cUrl or Postman to check our setup:
+- POST `/authenticate` with email/password params should return a JWT token.
 - GET `/user/index` with the token in the cookies or Authorization header will give us the user list
 
 Lets add some integration tests for that
@@ -551,8 +551,8 @@ describe('user routes', () => {
 
 ### Resources
 
-- [About JWT](https://jwt.io/)  
-- [PassportJS](http://passportjs.org/)  
-- [Passport Local](https://github.com/jaredhanson/passport-local)  
-- [Passport JWT](https://www.npmjs.com/package/passport-jwt)  
+- [About JWT](https://jwt.io/)
+- [PassportJS](http://passportjs.org/)
+- [Passport Local](https://github.com/jaredhanson/passport-local)
+- [Passport JWT](https://www.npmjs.com/package/passport-jwt)
 - [Working example](https://github.com/guyogev/express_passport_jwt_blog_post)

@@ -3,7 +3,7 @@ layout: post
 title:  "Meetup talk - Performance & devtools"
 subtitle: "Video recording of Spectory's meetup"
 date:   2019-02-19 14:29:43 +0200
-css_files: [global, post]
+css_files: []
 ---
 
 Meetup talk based on [Performance and dev tools post]({% post_url 2018-12-28-preformance-and-devtools %}).

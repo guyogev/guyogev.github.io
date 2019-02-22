@@ -1,0 +1,97 @@
+body, html {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  line-height: 1.15;
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  border-style: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  html { font-size: 20px; }
+}
+
+.bg-img {
+  background-image: url("/assets/images/coffee-bg.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(3px) sepia(0.15);
+  height: 100%;
+  opacity: .3;
+  transform: translate3d(0,0,0);
+}
+
+.post-wrapper {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  .post {
+    background: rgba(255, 255, 255, .35);;
+    border-radius: .5rem;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    margin: .5rem;
+    background: rgba(255, 255, 255, 0.45);
+    max-width: 65rem;
+    overflow: auto;
+    padding: 0 1rem;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      margin: 0 auto 2rem auto;
+    }
+  }
+
+  .highlight  {
+    background: rgba(255, 255 ,255, .5);
+    border-radius: 0.5rem;
+  }
+
+
+  .highlight .highlight {
+    background-color: rgba(255, 255 ,255, .5);
+    box-shadow: 3px 1px 4px 0 rgba(0, 0, 0, .12);
+    overflow: auto;
+    padding: 1rem .5rem;
+  }
+
+  figure.highlight {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+
+  .viz-wrapper > img {
+    width: 83%;
+  }
+
+  .video-container {
+    height: 0;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    position: relative;
+    width: 83%;
+  }
+
+  .video-container iframe,
+  .video-container object,
+  .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
+}
