@@ -25,7 +25,7 @@ The supervision strategy dictates what happens when one of the children crashes.
 
 First we'll define a simple `hello world` genServer.
 
-{% highlight elixir %}
+``` elixir
 defmodule App.Child do
   use GenServer
   require Logger
@@ -64,30 +64,29 @@ defmodule App.Child do
       {:noreply, state}
   end
 end
-{% endhighlight %}
-
+```
 
 Now we can create a bunch of child processes
 
-{% highlight elixir %}
+``` elixir
 worker(App.Child, "child_1", [id: "child_1"])
-{% endhighlight %}
+```
 
 
 Creating a Supervisor process is very simple too
 
-{% highlight elixir %}
+``` elixir
 children = [
   worker(App.Child, "child_1", [id: "child_1"]),
   worker(App.Child, "child_2", [id: "child_2"])
   ]
 Supervisor.start_link(children, strategy: strategy)
-{% endhighlight %}
+```
 
 
 In order to put it all together, we'll create a simple program that lunches a few child process, randomly killing them. Very G.R.R. Martin Like :)
 
-{% highlight elixir %}
+``` elixir
 defp create_supervision_tree(strategy) do
   children = create_children(10)
   {:ok, sup_pid} = Supervisor.start_link(children, strategy: strategy)
@@ -124,14 +123,14 @@ defp random_killer(child_pid) do
     :timer.sleep(1000)
   end
 end
-{% endhighlight %}
+```
 
 
 Thats it, whenever a child process will die, the supervisor reacts, making sure we'll always have all children running.
 
 Lets see how different strategies behave
 
-{% highlight elixir %}
+``` elixir
 def one_for_one do
   sup_pid = create_supervision_tree(:one_for_one)
   spawn_link(fn() -> main_loop(sup_pid) end)
@@ -146,11 +145,11 @@ def rest_for_one do
   sup_pid = create_supervision_tree(:rest_for_one)
   spawn_link(fn() -> main_loop(sup_pid) end)
 end
-{% endhighlight %}
+```
 
 Lunch our console by running `iex -S mix`
 
-{% highlight bash %}
+``` bash
 iex(1)> App.one_for_one
 
 11:45:27.304 [debug] Starting App.Child with name child_1!
@@ -192,11 +191,11 @@ iex(1)> App.one_for_one
 11:45:40.326 [info]  'child_7' says hey!
 
 11:45:46.660 [info]  'child_6' says hey!
-{% endhighlight %}
+```
 
 We can see that when when `child_8` dies, a new process immediately takes its place!
 
-{% highlight bash %}
+``` bash
 iex(2)> App.one_for_all
 
 11:50:44.951 [debug] Starting App.Child with name child_1!
@@ -248,11 +247,11 @@ iex(2)> App.one_for_all
 11:51:10.981 [debug] Starting App.Child with name child_10!
 
 11:51:11.982 [info]  'child_10' says hey!
-{% endhighlight %}
+```
 
 This time, whenever a child process dies, **all** other child processes are killed, and the whole batch is regenerated.
 
-{% highlight bash %}
+``` bash
 iex(1)> App.rest_for_one
 
 11:54:12.123 [debug] Starting App.Child with name child_1!
@@ -294,7 +293,7 @@ iex(1)> App.rest_for_one
 11:54:26.141 [debug] Starting App.Child with name child_10!
 
 11:54:27.142 [info]  'child_5' says hey!
-{% endhighlight %}
+```
 
 This time, whenever a process dies, all child process that were spawned **after** it are regenerated.
 
