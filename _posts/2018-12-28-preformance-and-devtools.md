@@ -4,6 +4,7 @@ title:  "Performance and DevTools"
 subtitle: "Profiling like a pro"
 date:   2018-12-28 14:29:43 +0200
 css_files: []
+js_files: [index]
 ---
 
 A while back, I wrote about [improving web pages performance JS optimizing]({% post_url 2017-10-06-web-browsers-performance-goodies %}).
@@ -101,7 +102,7 @@ The next clip demonstrate those tools in action. See how hovering over elements 
 shows which parts of the page is being repainted, and the impact on the monitors.
 
 <p class="video-container">
-  <iframe src="https://www.youtube.com/embed/Wq9_OqIleqo"
+  <iframe data-src="https://www.youtube.com/embed/Wq9_OqIleqo"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
@@ -116,7 +117,7 @@ Setting the logs level to *verbose* will print common performance violations war
 For example At next screenshots, the last log entry shows a *setTimeout* callback took to long to completed.
 
 <p align="center" class="viz-wrapper">
-  <img src="/assets/images/performance-and-devtools/console.png"/>
+  <img data-src="/assets/images/performance-and-devtools/console.png"/>
 </p>
 
 ### Network
@@ -128,7 +129,7 @@ Network tab allow us to do just that - test and monitor the page under simulated
 Another nice feature is **Coverage** that exposes dead code that can & should be deleted. Some teams like to define a [network budget](http://www.performancebudget.io/) (i.e. JS Kb limit). Such limits can be enforced by CI automation).
 
 <p class="video-container">
-  <iframe src="https://www.youtube.com/embed/-Uiv0Woarns"
+  <iframe data-src="https://www.youtube.com/embed/-Uiv0Woarns"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
@@ -162,7 +163,7 @@ discovering a the source of performance issue is like finding a needle in a hays
 The matter is well covered at [this doc](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference), I'll provide a short overview.
 
 <p align="center" class="viz-wrapper">
-  <img src="/assets/images/performance-and-devtools/performance_tab_1.png"/>
+  <img data-src="/assets/images/performance-and-devtools/performance_tab_1.png"/>
 </p>
 
 At the top we'll find the recording settings.
@@ -183,7 +184,7 @@ Next snapshots (if recorded), and a deeper breakdown of
 We can dive deeper into a single frame paint process, view a layers breakdown and see the frame paint strokes via the **paint profiler**
 
 <p align="center" class="viz-wrapper">
-  <img src="/assets/images/performance-and-devtools/performance_tab_2.png"/>
+  <img data-src="/assets/images/performance-and-devtools/performance_tab_2.png"/>
 </p>
 
 <hr>
@@ -214,7 +215,7 @@ At the next screencast, we pin point *pub_ads_impl.js* script as a bottle neck, 
 domain.
 
 <p class="video-container">
-  <iframe src="https://www.youtube.com/embed/sW7n9ImFNYk"
+  <iframe data-src="https://www.youtube.com/embed/sW7n9ImFNYk"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
@@ -225,7 +226,7 @@ Running a performance test again shows load time improve at about 67% (!!!)
 dropping from 13 seconds to 4, and the performance warning has disappeared.
 
 <p align="center" class="viz-wrapper">
-  <img src="/assets/images/performance-and-devtools/network_blocking_result.png"/>
+  <img data-src="/assets/images/performance-and-devtools/network_blocking_result.png"/>
 </p>
 
 Now that we contained the issue, we can decide how to handle it (remove, replace, delay, move to service worker...)
@@ -244,7 +245,7 @@ At next screen cast, we see the page height changes due to a banner with an unde
 Tightening the banner CSS class eliminates the issue.
 
 <p class="video-container">
-  <iframe src="https://www.youtube.com/embed/cDZTcA9OLTU"
+  <iframe data-src="https://www.youtube.com/embed/cDZTcA9OLTU"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>

@@ -5,13 +5,16 @@ function jumpTo(id) {
     top: top,
     behavior: "smooth"
   })
-};
+}
 
 function lazyLoadImages() {
-  const imgDefer = document.getElementsByTagName('img');
-  for (let i = 0; i<imgDefer.length; i++) {
-    if (imgDefer[i].getAttribute('data-src')) {
-      imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+  const deferred = [
+    ...document.getElementsByTagName('img'),
+    ...document.getElementsByTagName('iframe')
+  ];
+  for (let i = 0; i<deferred.length; i++) {
+    if (deferred[i].getAttribute('data-src')) {
+      deferred[i].setAttribute('src',deferred[i].getAttribute('data-src'));
     }
   }
 }
