@@ -16,6 +16,8 @@ function lazyLoadImages() {
   }
 }
 
-window.addEventListener('load', () => {
-  lazyLoadImages();
+document.addEventListener('readystatechange', () => {
+  if (document.readyState === 'complete') {
+    lazyLoadImages();
+  }
 });
