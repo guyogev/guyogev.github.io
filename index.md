@@ -133,7 +133,9 @@ js_files: [index]
     <div class="group">
       <div class="bullet">
         <div class="bullet-title">
-          <div class="logo spectory"></div>
+          <div class="logo">
+            <img data-src="https://www.spectory.com/favicon.png"/>
+          </div>
           <div>
             <span class="date">2014 - 17: </span>
             <span class="position">Fullstack Web Developer</span>
@@ -165,7 +167,9 @@ js_files: [index]
       </div>
       <div class="bullet">
         <div class="bullet-title">
-          <div class="logo google"></div>
+          <div class="logo">
+            <img data-src="https://cdn1.iconfinder.com/data/icons/company-identity/100/new-google-favicon-128.png"/>
+          </div>
           <div>
             <span class="date">2017 - Today: </span>
             <span class="position">Front End Developer</span>
@@ -185,7 +189,9 @@ js_files: [index]
     <div class="group">
       <div class="bullet">
         <div class="bullet-title">
-          <div class="logo bgu"></div>
+          <div class="logo ">
+            <img data-src="https://pbs.twimg.com/profile_images/509304330667585536/uDo6qU3J_400x400.png"/>
+          </div>
           <div>
             <span class="date">2010 - 14: </span>
             <span class="position">B.Sc Computer science & Linguistics</span>
@@ -201,27 +207,27 @@ js_files: [index]
   <div class="sub-title">Social</div>
   <div class="links">
     <a href="https://github.com/guyogev" target="blank" class="logo">
-      <img src="/assets/images/github.png"/>
+      <img data-src="/assets/images/github.png"/>
       <div class="label">github</div>
     </a>
     <a href="https://stackoverflow.com/users/6767060/guy-yogev?tab=profile" target="blank" class="logo">
-      <img src="/assets/images/stackoverflow.png"/>
+      <img data-src="/assets/images/stackoverflow.png"/>
       <div class="label">S.O.</div>
     </a>
     <a href="https://www.codewars.com/users/guyogev" target="blank" class="logo">
-      <img src="/assets/images/codewars.png" />
+      <img data-src="/assets/images/codewars.png" />
       <div class="label">codewars</div>
     </a>
     <a href="https://www.linkedin.com/in/guy-yogev-22220096/" target="blank" class="logo">
-      <img src="https://freeiconshop.com/wp-content/uploads/edd/linkedin-outline.png"/>
+      <img data-src="https://freeiconshop.com/wp-content/uploads/edd/linkedin-outline.png"/>
       <div class="label">linkedin</div>
     </a>
     <a href="https://app.pluralsight.com/profile/guy-yogev" target="blank" class="logo">
-      <img src="/assets/images/pluralsight.png" />
+      <img data-src="/assets/images/pluralsight.png" />
       <div class="label">pluralsight</div>
     </a>
     <a href="https://twitter.com/guyogev" target="blank" class="logo">
-      <img src="/assets/images/twitter.png" />
+      <img data-src="/assets/images/twitter.png" />
       <div class="label">twitter</div>
     </a>
   </div>
