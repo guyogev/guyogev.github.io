@@ -14,7 +14,8 @@ Meetup talk based on [Performance and dev tools post]({% post_url 2018-12-28-pre
   <iframe data-src="https://www.youtube.com/embed/WtAbv61wxgY"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
+          allowfullscreen
+          title="Meetup talk - Performance and devtools.">
   </iframe>
 </p>
 
