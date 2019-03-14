@@ -29,6 +29,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-target-blank
 sass:
   sass_dir: /_scss
   style: compressed

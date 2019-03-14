@@ -86,7 +86,7 @@ build with CSR.
 
 In the real world, not everything is black and white. Chances are that an app doesn't strictly match any of the above cases.
 
-At [Michael Bleigh's post]((https://blog.usejournal.com/when-should-i-server-side-render-c2a383ff2d0f)),
+At [Michael Bleigh's post](https://blog.usejournal.com/when-should-i-server-side-render-c2a383ff2d0f),
 he provides a very storing indicator which way to should go when its hard to
 decide.
 
