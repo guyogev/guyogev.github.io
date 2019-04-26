@@ -186,7 +186,7 @@ They have millions of users, they can make sure a change only affect a subset of
 At worst case, some of their captive users are unhappy for a while. Not ideal, but its a calculated risk.
 
 However, if I have only a 100 users and 5 market competitors, maybe relying on my users patience is an unnecessary risk.
-Waiting till the product is more mature may be a better approached.
+Waiting till the product is more mature may be a better approach.
 
 <p align="center" class="viz-wrapper">
   <img data-src="https://media.giphy.com/media/2xEzi32w6cLCgmAa6p/giphy.gif"
