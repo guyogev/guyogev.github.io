@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Continuous deployment"
+title:  "Continuous Deployment"
 subtitle: "Culture automation"
 date:   2019-04-24 14:29:43 +0200
 css_files: []
@@ -9,9 +9,16 @@ js_files: [index]
 
 *Continuous deployment (CD)* is the practice of minimizing the time between a code change and production deployment via automation.
 
-One may ask, is that  a good practice? When done right, it is very powerful. When done wrong it can be catastrophic.
+One may ask, is that  a good practice?
 
-How can one tell if a team can/should practice CD? At this post, I'll try to answer this question.
+When done right, it is very powerful. When done wrong it can be catastrophic.
+
+<p align="center" class="viz-wrapper">
+  <img data-src="https://media.giphy.com/media/aQbXTcBkoXauI/giphy.gif"
+       style="max-width: 50%;"/>
+</p>
+
+So how can one tell if a team can/should practice CD? At this post, I'll try to answer this question.
 
 ------------------------------------------------------------------------
 
@@ -36,7 +43,7 @@ A team must master both before attempting CD.
 
 [Continues integration](https://en.wikipedia.org/wiki/Continuous_integration) means code changes are built, tested & merged into the codebase HEAD (i.e. Git master branch) ASAP.
 
-[Continuous delivery](https://en.wikipedia.org/wiki/Continuous_delivery) mean software versions are packed, built & tested ASAP. There is always a stable version ready for deployment.
+[Continuous delivery](https://en.wikipedia.org/wiki/Continuous_delivery) means software versions are packed, built & tested ASAP. There is always a stable version ready for deployment.
 
 In other words:
 
@@ -62,9 +69,11 @@ Such issues can be avoided by making sure
 1. The whole dev team works on the same environments.
 2. Stating environment mirror production as close a possible.
 
+There are a number of key factors to take into account in order to build a software that can automate both integration and delivery.
+
 #### Architecture, control & test coverage
 
-Obviously empty test suites always pass.
+Obviously empty test suites always pass, and never validated code works.
 
 1. Code should be easy to test, meaning it is modular (i.e. divided into standalone modules/libs/micro-services...).
 2. Every code must have sufficient code coverage.
@@ -74,7 +83,7 @@ It should be easy to control the software execution both on deploy and on run ti
 1. Code should be controlled by flags (i.e. switch on/off features while under development with ENV vars or config files).
 2. Be aware of run time side effects (i.e. what would happen if we rollback DB scheme change).
 
-A code change that not meet the above, must not be merged.
+A code change that does not meet the above standards will suffer from regression issues.
 
 <p align="center" class="viz-wrapper">
   <img data-src="https://media.giphy.com/media/10atLI1Qgm2WCk/giphy.gif"
@@ -98,24 +107,32 @@ Pipelines should be easy to use.
 Every developer must be able to run the pipeline locally (at least the lion's share of its steps. Stress testing locally doesn't contribute much...).
 
 Pipelines should give fast feedback.
-A developer should know whether the change is OK, or at least on the right track, within a few minutes. If such feedback takes too long, the developer would move on to something else. Work would be delayed due to context switches.
+A developer should know whether the change is OK, or at least on the right track, within a few minutes.
 
 #### Pipeline is sacred ground
 
 Pipeline must be consistent & robust. Always.
+
 An issue with the pipeline must be fixed with the highest priority.
 
 #### Agility
 
 As mentioned above, CD is about fast paste.
 If agility is not part of the team DNA, it can never achieve CD.
-Moreover, trying to apply CD with non agile team is probably a path to a project failure unhappy users & employees.
+
+Moreover, trying to apply CD with non agile team most likely slow down the team.
+CD would add a lot of noise in the form of bugs and inner team friction.
 
 A Team must be small, independent, responsive, with full e2e responsibility & ownership over its work.
 
-> If a developer must wait days for QA & PM approval for every change, the team is not agile.
+<p align="center" class="viz-wrapper">
+  <img data-src="https://media.giphy.com/media/13i7UiKtYdZyQU/giphy.gif"
+       style="max-width: 50%;"/>
+</p>
 
 A team must allow free communication, open to feedback and criticism, and must be able to translate those into responsiveness and self improvement.
+
+> If a developer must wait days for QA & PM approval for every change, the team is not agile.
 
 > If a developer does something because "we always did it that way", the team is not agile.
 
@@ -123,7 +140,7 @@ A team must allow free communication, open to feedback and criticism, and must b
 
 ### Moving from continuous integration & delivery to continuous deployment
 
-Once we have automated continuous integration & delivery pipeline, it is a short step to CD.
+Once we have automated a continuous integration & delivery pipeline, it is a short step to CD.
 We just need to expand the pipeline to deploy to prod.
 
 <p align="center" class="viz-wrapper">
@@ -131,9 +148,7 @@ We just need to expand the pipeline to deploy to prod.
        style="max-width: 50%;"/>
 </p>
 
-But before doing so, there is one final thing consider.
-
-> There is no such thing as bug-free software.
+But before doing so, there is one final thing consider - There is no such thing as bug-free software.
 
 When manually deploying versions, things are watched more closely, so such failures can be caught early.
 With CD, we may deploy dozens of times a day, with on human intervention.
@@ -157,14 +172,21 @@ Team must have an on-call rotation that reacts to failures 24/7.
 #### User perception
 
 One of the greatest advantage of CD is fast feedback.
-When a bug is found, it is reported by the users, or detected by the monitors.
 
-But it should be asked, do users appreciate this role we force upon them?
+When UX bad, it is reported by the users (i.e. users are not happy with our new feature, or report a bug).
 
-Sure, "users as QA" is a luxury enterprises such as FB or WhatsApp can afford.
-They have millions of users and can make sure a change only affect a subset of them before reaching the whole world (A/B testing, Green/Blue, canary versions...). At worst case, some of their captive users are unhappy for a while.
+1. There must be simple way for a user to provide feedback.
+2. Feedback must reach & processed by the team ASAP.
 
-But if I have only a 100 users and 5 market competitors, maybe relying on my users patience is an unnecessary risk. Waiting till the product is more mature may be a better approached.
+It also should be asked, do users appreciate this QA role we force upon them?
+
+"Users as QA" is a luxury enterprises such as FB or WhatsApp can afford.
+They have millions of users, they can make sure a change only affect a subset of them before reaching the whole world (A/B testing, Green/Blue, canary versions...).
+
+At worst case, some of their captive users are unhappy for a while. Not ideal, but its a calculated risk.
+
+However, if I have only a 100 users and 5 market competitors, maybe relying on my users patience is an unnecessary risk.
+Waiting till the product is more mature may be a better approached.
 
 <p align="center" class="viz-wrapper">
   <img data-src="https://media.giphy.com/media/2xEzi32w6cLCgmAa6p/giphy.gif"
