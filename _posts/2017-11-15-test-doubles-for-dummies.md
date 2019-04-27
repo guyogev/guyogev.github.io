@@ -2,6 +2,7 @@
 layout: post
 title:  "Test Doubles For Dummies"
 subtitle: "Test Doubles comes on many shapes and sizes."
+description: "Test Doubles For Dummies"
 date:   2017-11-15 21:29:43 +0200
 css_files: []
 ---

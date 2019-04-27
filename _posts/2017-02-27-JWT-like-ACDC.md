@@ -2,6 +2,7 @@
 layout: post
 title:  "JWT Like AC/DC"
 subtitle: "Web Tokens Rock N Roll."
+description: "JWT Like AC/DC"
 date:   2016-12-18 21:29:43 +0200
 css_files: []
 ---

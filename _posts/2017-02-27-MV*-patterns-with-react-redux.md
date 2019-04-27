@@ -2,6 +2,7 @@
 layout: post
 title:  "MV* Patterns With React Redux"
 subtitle: "Reduce, Reuse, Recycle."
+description:  "MV* Patterns With React Redux"
 date:   2017-02-27 21:29:43 +0200
 css_files: []
 ---

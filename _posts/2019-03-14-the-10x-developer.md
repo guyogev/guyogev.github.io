@@ -2,6 +2,7 @@
 layout: post
 title:  "The 10X Developer"
 subtitle: "It's not a myth. It's culture."
+description: "The 10X Developer"
 date:   2019-03-14 14:29:43 +0200
 css_files: []
 js_files: [index]

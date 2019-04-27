@@ -2,6 +2,7 @@
 layout: post
 title:  "Performance and DevTools"
 subtitle: "Profiling like a pro"
+description: "Performance and DevTools"
 date:   2018-12-28 14:29:43 +0200
 css_files: []
 js_files: [index]

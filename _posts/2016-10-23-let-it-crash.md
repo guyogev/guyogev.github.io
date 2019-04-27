@@ -2,6 +2,7 @@
 layout: post
 title:  "Let It Crash!"
 subtitle: "Elixir's supervision trees"
+description: "Let It Crash!"
 date:   2016-10-23 21:29:43 +0200
 css_files: []
 ---

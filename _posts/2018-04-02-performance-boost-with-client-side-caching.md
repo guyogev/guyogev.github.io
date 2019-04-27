@@ -2,6 +2,7 @@
 layout: post
 title:  "Performance Boost With Client Side Caching"
 subtitle: "Reducing network & CPU usage with cache & storage."
+description: "Performance Boost With Client Side Caching"
 date:   2018-02-04 21:29:43 +0200
 css_files: []
 ---

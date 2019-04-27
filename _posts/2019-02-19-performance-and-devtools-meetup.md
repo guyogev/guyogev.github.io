@@ -2,6 +2,7 @@
 layout: post
 title:  "Meetup talk - Performance & devtools"
 subtitle: "Video recording of Spectory's meetup"
+description: "Meetup talk - Performance & devtools"
 date:   2019-02-19 14:29:43 +0200
 css_files: []
 js_files: [index]

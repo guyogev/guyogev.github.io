@@ -2,6 +2,7 @@
 layout: post
 title:  "Test Suite Robustness"
 subtitle: "Build easy, fast and maintainable test suites for the long run."
+description:  "Test Suite Robustness"
 date:   2017-12-14 21:29:43 +0200
 css_files: []
 ---

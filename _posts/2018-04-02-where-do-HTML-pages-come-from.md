@@ -2,6 +2,7 @@
 layout: post
 title:  "Where Do HTML Pages Come From?"
 subtitle: "Rendering location matters."
+description: "Where Do HTML Pages Come From?"
 date:   2018-08-15 14:29:43 +0200
 css_files: []
 ---

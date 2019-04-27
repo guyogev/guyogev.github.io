@@ -2,6 +2,7 @@
 layout: post
 title:  "Web browsers performance goodies"
 subtitle: "Stop that jank!"
+description: "Web browsers performance goodies"
 date:   2017-10-06 21:29:43 +0200
 css_files: []
 ---
