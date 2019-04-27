@@ -2,6 +2,7 @@
 layout: post
 title:  "Continuous Deployment"
 subtitle: "Culture automation"
+description: "Continuous deployment team prerequisites"
 date:   2019-04-24 14:29:43 +0200
 css_files: []
 js_files: [index]

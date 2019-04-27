@@ -16,7 +16,7 @@
 title: Guy Yogev
 email: guyogev@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Guy Yogev, full stack web developer.
+  Guy Yogev, full stack web developer CV & blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://guyogev.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: guyogev
