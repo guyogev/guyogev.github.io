@@ -2,12 +2,13 @@
 layout: post
 title:  "Test Suite Robustness"
 subtitle: "Build easy, fast and maintainable test suites for the long run."
+description:  "Test Suite Robustness"
 date:   2017-12-14 21:29:43 +0200
-css_files: [global, post]
+css_files: []
 ---
 There are a lot of great [benefits from unit testing](https://github.com/Spectory/unit_tests_dev_meeting/blob/master/blog.md) .
 
-The code base changes over time, and so is the test code.  
+The code base changes over time, and so is the test code.
 Some tests are written as part of the TDD methodology, some are added after to verify older code.
 
 A good test suite is easy & fast to maintain, refactor and expand.
@@ -20,12 +21,12 @@ The only thing worst than a bad test suite is no test suite at all.
 
 ### Clean Code
 
-Keep general coding best practices, same as at the production code.  
+Keep general coding best practices, same as at the production code.
 Principles (such as [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), meaningful names, [low ABC score](https://en.wikipedia.org/wiki/ABC_Software_Metric)...) should be followed.
 
 ### Testing Only The Golden Scenario
 
-The golden scenario test proves that the function does what it should do, but **doesn't try hard enough to prove otherwise**.  
+The golden scenario test proves that the function does what it should do, but **doesn't try hard enough to prove otherwise**.
 It doesn't take into account things like typing issues, invalid inputs, , logical thresholds an so on...
 ```javascript
 const divide = (x, y) => x / y;
@@ -117,12 +118,12 @@ describe('foo', () => {
       const obj = {value: 1}
       expect(foo(obj)).toEqual(...);
     });
-    
+
     it('does something when value is 2', () => {
       const obj = {value: 2}
       expect(foo(obj)).toEqual(...);
     });
-    
+
     it('does something when value is 3', () => {
       const obj = {value: 3}
       expect(foo(obj)).toEqual(...);
@@ -142,7 +143,7 @@ describe('inc', () => {
     inc(obj)
     expect(obj.num).toBe(0);
   });
-  
+
   it ('should increment obj.num', () => {
     inc(obj)
     expect(obj.num).toBe(1);
@@ -157,12 +158,12 @@ describe('inc', () => {
   beforeEach(() => {
     obj = {};
   })
-  
+
   it ('should init obj.num', () => {
     inc(obj)
     expect(obj.num).toBe(0);
   });
-  
+
   it ('should increment obj.num', () => {
     obj.num = 0
     inc(obj);
@@ -173,14 +174,14 @@ describe('inc', () => {
 
 ### Large setups in a test
 
-Placing a large setup procedures in a test  
-1\. Distract the reader from test core.  
+Placing a large setup procedures in a test
+1\. Distract the reader from test core.
 2\. Makes it harder to write future test on the same subject.
 ```javascript
 describe('func', () => {
   it('shuold do something', () => {
     subject = new Something()
-    /* 
+    /*
     * 10 lines of setup code
     */
     expect(subject.run).toEqual(...)
@@ -188,22 +189,22 @@ describe('func', () => {
 });
 ```
 
-At some point, other developer will need to add logic to `Something` class.  
-He doesn't want, nor have the time, to go over the whole setup procedure, it doesn't really matter for his task.  
+At some point, other developer will need to add logic to `Something` class.
+He doesn't want, nor have the time, to go over the whole setup procedure, it doesn't really matter for his task.
 So he copies it, breaking the DRY rule.
 ```javascript
 describe('func', () => {
   it('should run', () => {
     subject = new Something()
-    /* 
+    /*
     * 10 lines of setup code
     */
     expect(subject.run()).toEqual(...)
   })
-  
+
   it('should start', () => {
     subject = new Something()
-    /* 
+    /*
     * 10 lines of setup code
     */
     expect(subject.start()).toEqual(...)
@@ -217,11 +218,11 @@ describe('func', () => {
   const subject;
   beforeEach(() =>{
     subject = new Something()
-    /* 
+    /*
     * 10 lines of setup code
     */
   })
-  
+
   it('should do something', () => {
     expect(subject.run()).toEqual(...)
   })
@@ -232,11 +233,11 @@ Or by moving the setup into a function
 ```javascript
 describe('func', () => {
   const setup = (subject) => {
-  /* 
+  /*
   * 10 lines of setup code
   */
   }
-  
+
   it('should do something', () => {
     const subject = new Something()
     setup(subject);

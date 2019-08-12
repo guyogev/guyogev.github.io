@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<!-- Style optimizations -->
+<link rel="preload" href="/assets/images/code-bg.jpg" as="image">
+<!-- Inline styles -->
+{% capture styles %}
+  {% include inline_home_style.scss %}
+{% endcapture %}
+<style>
+  {{ styles | scssify }}
+</style>
+
+{{ content }}
