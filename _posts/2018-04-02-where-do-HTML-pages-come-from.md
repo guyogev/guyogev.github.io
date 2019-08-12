@@ -2,8 +2,9 @@
 layout: post
 title:  "Where Do HTML Pages Come From?"
 subtitle: "Rendering location matters."
+description: "Where Do HTML Pages Come From?"
 date:   2018-08-15 14:29:43 +0200
-css_files: [global, post]
+css_files: []
 ---
 
 Web apps come in all shapes and sizes, but they all have one thing in common -
@@ -86,7 +87,7 @@ build with CSR.
 
 In the real world, not everything is black and white. Chances are that an app doesn't strictly match any of the above cases.
 
-At [Michael Bleigh's post]((https://blog.usejournal.com/when-should-i-server-side-render-c2a383ff2d0f)),
+At [Michael Bleigh's post](https://blog.usejournal.com/when-should-i-server-side-render-c2a383ff2d0f),
 he provides a very storing indicator which way to should go when its hard to
 decide.
 

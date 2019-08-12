@@ -2,17 +2,29 @@
 layout: post
 title:  "Performance and DevTools"
 subtitle: "Profiling like a pro"
+description: "Performance and DevTools"
 date:   2018-12-28 14:29:43 +0200
-css_files: [global, post]
+css_files: []
+js_files: [index]
 ---
+
+A while back, I wrote about [improving web pages performance JS optimizing]({% post_url 2017-10-06-web-browsers-performance-goodies %}).
+Finding which parts of the app require optimization, and what exactly is the source of the issue
+can be challenging.
+
+At this post, I'll try to introduce some tools and routines that can help
+pin point the issue, and quickly testing our solution.
 
 ## Performance matters
 
-Retaining users is hard. This days users expect things to be fast and smooth. [Google's study](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/) shows even a few seconds of loading time lag can make the *session duration* drop and *bounce rate* climb.
+First, why should we even care?
+
+Well, retaining users is hard.
+This days users expect things to be fast and smooth. [Google's study](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/) shows even a few seconds of loading time lag can make the *session duration* drop and *bounce rate* climb.
 
 Even if we managed to load the page fairly quickly, [bad UX](https://medium.com/@slhenty/ui-response-times-acec744f3157) is not easily forgiven.
 
-In short **Performance** == **Money**.
+If we can retain users, we loose business. In short **Performance** == **Money**.
 
 ### Why measure
 
@@ -20,7 +32,7 @@ As [Adam Savage said](https://www.reddit.com/r/mythbusters/comments/3wgqgv/the_o
 > *Remember kids, the only difference between screwing around and science, is writing it down*.
 
 A user *"feels"* the load time is long, or scroll is sluggish.
-Measuring allows us to translate such*"feelings"* into hard metrics.
+Measuring allows us to translate such *"feelings"* into hard metrics.
 In other words, it shifts us from the *qualitative* discussion to a *quantitative* one.
 
 Measurements allows us to define the problem
@@ -37,11 +49,11 @@ And even better, to define standards we wish to keep (maybe even protect by CI a
 When analyzing a page, I like to start by running an audit.
 It shed light on most common issues that have a very good effort-to-value ratio.
 
-Chrome dev-tools *Audit* tab can generates a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) report, but I find [webpagetest](https://www.webpagetest.org) more powerful scene
+Chrome dev-tools *Audit* tab can generates a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) report, but I find [webpagetest](https://www.webpagetest.org) more powerful because
 
 - It can run on many devices / browsers.
-- Allow testing from a different geographic location.
-- Record screen casts and screenshots
+- Allows testing from a different geographic locations.
+- Records screen casts and screenshots
 - Includes [lighthouse](https://www.webpagetest.org/forums/showthread.php?tid=14876) audit.
 
 The downside of an audit is that it only cover the page load time. It can't
@@ -65,11 +77,11 @@ as a plugin/extension, that would add functionality to the native browser (i.e. 
 Those tools allow developers to observe how the browser runs the code, and more importantly,
 change it and see the impact immediately, making the debug cycle very short.
 
-This days such dev tools are embedded natively at all major browsers.
+This days such dev tools are embedded natively in all major browsers.
 
 ### Measuring performance via Chrome's dev-tools
 
-Chrome dev-tools offer many hidden gems. But before we dig into those, its important that we understand what they tell us. We should understand what concepts such as *FPS* or *jank* means,
+Chrome dev-tools offer many hidden gems. But before we dig into those, it is important that we understand what they tell us. We should understand what concepts such as *FPS* or *jank* means,
 and know how the browser execute the code we feed into it. I highly recommend [this tutorial](https://developers.google.com/web/fundamentals/performance/rendering/)
 
     Tips
@@ -78,7 +90,7 @@ and know how the browser execute the code we feed into it. I highly recommend [t
 
 ### Real time monitors
 
-Real time monitors help us understand how user's action affect the UI and its performance impact.
+Real time monitors help us understand how user's action affect the UI and it's performance impact.
 
 - **FPS Meter** shows frame rate over time and GPU usage.
 - **Paint rectangles** add noticeable green flash effect to areas that are being repainted.
@@ -91,51 +103,56 @@ The next clip demonstrate those tools in action. See how hovering over elements 
 shows which parts of the page is being repainted, and the impact on the monitors.
 
 <p class="video-container">
-  <iframe src="https://www.youtube.com/embed/Wq9_OqIleqo"
+  <iframe data-src="https://www.youtube.com/embed/Wq9_OqIleqo"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
+          allowfullscreen
+          title="Demo of dev-tool's monitors and repaints indicators.">
   </iframe>
 </p>
 ## Console
 
-Many developers use only a fraction of the console abilities, but we can [travel pretty deeply down this rabbit hole](https://medium.freecodecamp.org/how-to-get-the-most-out-of-the-javascript-console-b57ca9db3e6d).
+Many developers use only a fraction of the console abilities, but we can [travel pretty deeply down that rabbit hole](https://medium.freecodecamp.org/how-to-get-the-most-out-of-the-javascript-console-b57ca9db3e6d).
 
-Setting the logs level to *verbose* will print common performance violations warning that are detected by the browser. For example At next screenshots, the last log entry shows a *setTimeout* callback took to long to completed.
+Setting the logs level to *verbose* will print common performance violations warning that are detected by the browser.
+
+For example At next screenshots, the last log entry shows a *setTimeout* callback took to long to completed.
 
 <p align="center" class="viz-wrapper">
-  <img src="/assets/images/performance-and-devtools/console.png"/>
+  <img data-src="/assets/images/performance-and-devtools/console.png"
+       alt="Verbose logs"/>
 </p>
 
 ### Network
 
-While evaluating our app performance, its important to simulate our [end user environment](http://www.speedtest.net/global-index) as closely as possible. Things might works smoothly at the office with our high speed cable connection, but what about users with a slow G3 network?
+While evaluating our app performance, it is important to simulate our [end user environment](http://www.speedtest.net/global-index) as closely as possible. Things might works smoothly at the office with our high speed cable connection, but what about users with a slow G3 network?
 
 Network tab allow us to do just that - test and monitor the page under simulated network configuration.
 
 Another nice feature is **Coverage** that exposes dead code that can & should be deleted. Some teams like to define a [network budget](http://www.performancebudget.io/) (i.e. JS Kb limit). Such limits can be enforced by CI automation).
 
 <p class="video-container">
-  <iframe src="https://www.youtube.com/embed/-Uiv0Woarns"
+  <iframe data-src="https://www.youtube.com/embed/-Uiv0Woarns"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
+          allowfullscreen
+          title="Code coverage report demo">
   </iframe>
 </p>
 
 **Request blocking** allows blacklisting specific files/domains.
-For example, files we can block files with low coverage, and see its impact immediately.
+For example, files we can block files with low coverage, and see it's impact immediately.
 
 ### Source
 
-Aside from the obvious features of *file-viewer* and *debugger*, source tab has some useful utils
+Aside from the obvious features of *file-viewer* and *debugger*, source tab has some useful utils.
 
 **Network** shows all resources that were loaded by the page.
 
 **Snippets** allows creating persistent code blocks, which can save repeated typing while debugging from the console.
 
 In my view, the most powerful tool is **overrides**, which allows loading a local copy of a resource
-from our file system. This allows us to use dev-tools as an IDE. Its an extremely fast way
+from our file system. This allows us to use dev-tools as an IDE. It is an extremely fast way
 to test code changes, no need to go through a full build-deploy cycle.
 
 ### Performance
@@ -150,7 +167,8 @@ discovering a the source of performance issue is like finding a needle in a hays
 The matter is well covered at [this doc](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference), I'll provide a short overview.
 
 <p align="center" class="viz-wrapper">
-  <img src="/assets/images/performance-and-devtools/performance_tab_1.png"/>
+  <img data-src="/assets/images/performance-and-devtools/performance_tab_1.png"
+       alt="Performance tab overview."/>
 </p>
 
 At the top we'll find the recording settings.
@@ -171,7 +189,8 @@ Next snapshots (if recorded), and a deeper breakdown of
 We can dive deeper into a single frame paint process, view a layers breakdown and see the frame paint strokes via the **paint profiler**
 
 <p align="center" class="viz-wrapper">
-  <img src="/assets/images/performance-and-devtools/performance_tab_2.png"/>
+  <img data-src="/assets/images/performance-and-devtools/performance_tab_2.png"
+       alt="Paint profiler"/>
 </p>
 
 <hr>
@@ -194,18 +213,19 @@ Here are a few examples.
 At this routine
 
 1. Focus on **performance warning indications**.
-2. Zoom on the area, search for the JS **call stack** root, and its file.
+2. Zoom on the area, search for the JS **call stack** root, and it's file.
 3. We find the file **network** request
 4. **Block** the request or all requests from the same domain
 
-At the next screencast, we pin point *pub_ads_impl.js* script as a bottle neck, and block its
-its domain.
+At the next screencast, we pin point *pub_ads_impl.js* script as a bottle neck, and block it's
+domain.
 
 <p class="video-container">
-  <iframe src="https://www.youtube.com/embed/sW7n9ImFNYk"
+  <iframe data-src="https://www.youtube.com/embed/sW7n9ImFNYk"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
+          allowfullscreen
+          title="Blocking network requests demo.">
   </iframe>
 </p>
 
@@ -213,7 +233,8 @@ Running a performance test again shows load time improve at about 67% (!!!)
 dropping from 13 seconds to 4, and the performance warning has disappeared.
 
 <p align="center" class="viz-wrapper">
-  <img src="/assets/images/performance-and-devtools/network_blocking_result.png"/>
+  <img data-src="/assets/images/performance-and-devtools/network_blocking_result.png"
+       alt="Performance improvement result."/>
 </p>
 
 Now that we contained the issue, we can decide how to handle it (remove, replace, delay, move to service worker...)
@@ -223,7 +244,7 @@ Now that we contained the issue, we can decide how to handle it (remove, replace
 At this routine
 
 1. Slowly go over the recorded **snapshots**, looking for sharp changes.
-2. Find the root **element** on the DOM.
+2. Find the faulty **element** on the DOM.
 3. Find the **source** file the applies the element CSS rules.
 4. **Override** the file.
 5. Make **persistent changes** to the local file.
@@ -232,12 +253,17 @@ At next screen cast, we see the page height changes due to a banner with an unde
 Tightening the banner CSS class eliminates the issue.
 
 <p class="video-container">
-  <iframe src="https://www.youtube.com/embed/cDZTcA9OLTU"
+  <iframe data-src="https://www.youtube.com/embed/cDZTcA9OLTU"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
+          allowfullscreen
+          title="Style overrides demo.">
   </iframe>
 </p>
+
+<hr>
+
+### Summary
 
 Thats all we'll cover at this post, however dev-tools has a lot more to offer.
 

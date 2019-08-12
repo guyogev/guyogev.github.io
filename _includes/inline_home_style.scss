@@ -1,11 +1,29 @@
----
----
-@import "animations";
-@import "extends";
-@import "mixins";
-@import url('https://fonts.googleapis.com/css?family=Anton');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+// Mixins
+@mixin coverImage($url) {
+  background-image: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+@mixin gradToRight($r, $g, $b, $o) {
+  background: linear-gradient(to right, rgba($r, $g, $b, 1), rgba($r, $g, $b, $o));
+}
+
+// Extends
+%unstyled-a {
+  text-decoration: none;
+  color: inherit;
+  outline: 0;
+
+  &:hover, &:visited, &:focus, &:active  {
+    text-decoration: none;
+    color: inherit;
+    outline: 0;
+  }
+}
+
+// Keyframes
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -16,12 +34,32 @@
   100% { opacity: 0; }
 }
 
+/******************************************************************************/
+
+body, html {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  line-height: 1.15;
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  border-style: none;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   height: auto;
   padding-bottom: 1rem;
 }
 
-header {
+nav {
   align-items: center;
   background: rgba(255, 255, 255, .87);
   display: flex;
@@ -50,7 +88,7 @@ header {
       font-size: .8rem;
     }
 
-    &:hover {
+    &:hover, &:focus {
       border-top: 1px solid black;
       letter-spacing: 0.1rem;
       padding: 0.2rem 1rem 0 1rem;
@@ -72,8 +110,7 @@ header {
   position: relative;
 
   .about-bg {
-    @include coverImage("{{ site.url }}/assets/images/code-bg.jpg");
-    filter: grayscale(60%) blur(5px);
+    @include coverImage("/assets/images/code-bg.jpg");
     height: 100%;
     width: 100%;
 
@@ -240,20 +277,7 @@ header {
       border-radius: 50px;
       height: 2rem;
       margin: .5rem;
-      padding: 1rem;
       width: 2rem;
-    }
-
-    .spectory {
-      @include coverImage("https://www.spectory.com/favicon.png");
-    }
-
-    .google {
-      @include coverImage("https://cdn1.iconfinder.com/data/icons/company-identity/100/new-google-favicon-128.png");
-    }
-
-    .bgu {
-      @include coverImage("https://pbs.twimg.com/profile_images/509304330667585536/uDo6qU3J_400x400.png");
     }
 
     .date {
@@ -301,7 +325,7 @@ header {
     margin: 1rem;
     width: 4rem;
 
-    &:hover {
+    &:hover, &:focus {
       .label {
         letter-spacing: 2.6px;
       }
@@ -336,7 +360,7 @@ header {
     padding: 1rem;
     transition: box-shadow 150ms;
 
-    &:hover {
+    &:hover, &:focus {
       box-shadow: 0px 2px 4px 1px rgba(170, 170, 170, 0.88);
 
       .post-title {

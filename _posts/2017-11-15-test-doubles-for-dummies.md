@@ -2,24 +2,25 @@
 layout: post
 title:  "Test Doubles For Dummies"
 subtitle: "Test Doubles comes on many shapes and sizes."
+description: "Test Doubles For Dummies"
 date:   2017-11-15 21:29:43 +0200
-css_files: [global, post]
+css_files: []
 ---
 **Test Doubles** is a generic term for any kind of pretend object used in place of a real object for testing purposes.
 
-Doubles comes on many shapes and forms, and often confused between one another.  
+Doubles comes on many shapes and forms, and often confused between one another.
 What is the difference between a dummy/mock/faker/stub?
 well it doesn't really matter as long as the terminology is agreed between the team members.
 
 At the end, Doubles are tools. The trick is to use the right one for each task.
 
-First, we'll define the terminology.  
+First, we'll define the terminology.
 We'll use `Jasmine`, which by its nature spies, stubs & mocks are very similar, but we'll try to pin point the differences.
 
 Dummies
 -------
 
-A dummy is an object placeholder. It can be passed around, but never used.  
+A dummy is an object placeholder. It can be passed around, but never used.
 It has no behavior, only state.
 ```javascript
 describe('Vet', () => {
@@ -38,8 +39,8 @@ describe('Vet', () => {
 Spies
 -----
 
-A Spy is an object that keeps track of its usage.  
-For example, it can track **which** method was called, **with what arguments**, and **how many times**.  
+A Spy is an object that keeps track of its usage.
+For example, it can track **which** method was called, **with what arguments**, and **how many times**.
 In other words, it track **how code had run** instead of **what it did**.
 
 ```javascript
@@ -48,26 +49,26 @@ describe("Dog", () => {
   beforeEach(() => {
     subject = new Dog();
   })
-    
+
   describe('testing with spies', () => {
     let result;
     beforeEach(() => {
       spyOn(subject, 'bark');
       result = subject.speak();
     })
-    
+
     it('should bark when speaking', () => {
       expect(subject.bark).toHaveBeenCalled();
     })
-      
+
     it('should bark loudly when speaking', () => {
       expect(subject.bark).toHaveBeenCalledWith(true);
     })
-      
+
     it('should bark only once', () => {
       expect(subject.bark.calls.count()).toEqual(1);
     })
-      
+
     it('should not call the real back method', () => {
       expect(result).toBe(undefined);
     })
@@ -78,7 +79,7 @@ describe("Dog", () => {
 Stub
 ----
 
-A stub is an object that doesn't know how to behave on its own.  
+A stub is an object that doesn't know how to behave on its own.
 Its methods only return what ask them to return during the test.
 
 ```javascript
@@ -86,7 +87,7 @@ describe('testing with stubs', () => {
   beforeEach(() => {
     spyOn(subject, 'bark').and.returnValue('meow');
   });
-    
+
   it('should meow instead of woff', () => {
     const result = subject.speak();
     expect(result).toEqual('meow');
@@ -97,7 +98,7 @@ describe('testing with stubs', () => {
 Mocks
 -----
 
-A mock is an object with pre-programmed with inputs & outputs.  
+A mock is an object with pre-programmed with inputs & outputs.
 In a way, its just a more complex stub.
 
 ```javascript
@@ -107,7 +108,7 @@ describe('testing with mocks', () => {
       this.sitting = true;
     });
   });
-    
+
   it('sit even when stand was called', () => {
     subject.sitting = true;
     subject.play();
@@ -119,8 +120,8 @@ describe('testing with mocks', () => {
 Fakers
 ------
 
-A fake is a lightweight implementation of an API that behaves like the real implementation.  
-For example, an in-memory database that fakes a FS DB.  
+A fake is a lightweight implementation of an API that behaves like the real implementation.
+For example, an in-memory database that fakes a FS DB.
 In a way, its just a more complex mock.
 
 ```javascript
@@ -153,7 +154,7 @@ describe('Vet', () => {
   beforeEach(() => {
     subject = new Vet()
   })
-    
+
   it('test with dummy', () => {
     const fakeDog = new FakeDog();
     expect(subject.measureTemperature(fakeDog)).toEqual('normal');
@@ -168,7 +169,7 @@ Now we know the difference between those tools, the trick is to choose the right
 
 #### Prefer state testing over interactions testing
 
-_Testing state_ means we're verifying that the code under test **returns the right results**.  
+_Testing state_ means we're verifying that the code under test **returns the right results**.
 _Testing interactions_ means we're verifying that the code under test **calls certain methods properly**.
 
 At most cases, testing state is better.
@@ -184,7 +185,7 @@ F = () {
   b()
   c()
 }
-```    
+```
 
 *   Testing that F **calls** a, b & c will pass even if the inner functions are broken, making the test very weak.
 *   refactoring a() into betterA() will cause F tests to fail.
@@ -204,7 +205,7 @@ Additional notes:
 
 #### Prefer real objects over Mocks/Stubs/Fakers
 
-Our tests should be executing your code in a way that's as close as possible to production.  
+Our tests should be executing your code in a way that's as close as possible to production.
 Therefore, you wish to avoid mocks/stubs/fakers where possible.
 
 As a rule of thumb, go from the easy to complex. `real < stub <= mock < fake`
@@ -215,7 +216,7 @@ As a rule of thumb, go from the easy to complex. `real < stub <= mock < fake`
 
 #### Fakers maintenance
 
-You typically shouldn't be writing fakes often since they require maintenance.  
+You typically shouldn't be writing fakes often since they require maintenance.
 Whenever the behavior of the real implementation changes, the fake must also be updated.
 
 *   The team that creates the production module, should be the one that maintain the faker.
