@@ -191,7 +191,7 @@ js_files: [index]
         <div class="bullet">
           <div class="bullet-title">
             <div class="logo ">
-              <img data-src="https://pbs.twimg.com/profile_images/509304330667585536/uDo6qU3J_400x400.png"/>
+              <img data-src="/assets/images/bgu-logo.png"/>
             </div>
             <div>
               <span class="date">2010 - 14: </span>
