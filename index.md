@@ -135,7 +135,29 @@ js_files: [index]
         <div class="bullet">
           <div class="bullet-title">
             <div class="logo">
-              <img data-src="https://www.spectory.com/favicon.png"/>
+              <img data-src="https://cdn1.iconfinder.com/data/icons/company-identity/100/new-google-favicon-128.png"/>
+            </div>
+            <div>
+              <span class="date">2017 - Today: </span>
+              <span class="position">Front End Developer</span>
+              <span class="location">@Google TLV</span>
+              <span>(Vendor by Spectory)</span>
+            </div>
+          </div>
+          <p>
+            A vendor team member at Google Trends team.
+          </p>
+          <p>
+            Develop and maintain the front end of <a href="https://trends.google.com" target="blank">Google Trends</a>,
+            Trends events (such as <a href="https://trends.google.com/yis/2017" target="blank">Year In Search</a>),
+            and a number of internal tools used by
+            <a href="https://newsinitiative.withgoogle.com/" target="blank">Google News Initiative</a>.
+          </p>
+        </div>
+        <div class="bullet">
+          <div class="bullet-title">
+            <div class="logo">
+              <img data-src="/assets/images/spectory_logo.png"/>
             </div>
             <div>
               <span class="date">2014 - 17: </span>
@@ -164,26 +186,6 @@ js_files: [index]
             Integration/Deployment tool, that allows us to tailor suite automation
             project code merges, tests, and finally deploy on green to any
             environment.
-          </p>
-        </div>
-        <div class="bullet">
-          <div class="bullet-title">
-            <div class="logo">
-              <img data-src="https://cdn1.iconfinder.com/data/icons/company-identity/100/new-google-favicon-128.png"/>
-            </div>
-            <div>
-              <span class="date">2017 - Today: </span>
-              <span class="position">Front End Developer</span>
-              <span class="location">@Google TLV</span>
-              <span>(Vendor by Spectory)</span>
-            </div>
-          </div>
-          <p>
-            A vendor team member at Google trends team.
-            Develop and maintain the front end of <a href="https://trends.google.com" target="blank">Google Trends</a>,
-            Trends events (such as <a href="https://trends.google.com/yis/2017" target="blank">Year In Search</a>),
-            and a number of internal tools used by
-            <a href="https://newsinitiative.withgoogle.com/" target="blank">Google News Initiative</a>.
           </p>
         </div>
       </div>
