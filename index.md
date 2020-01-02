@@ -132,13 +132,37 @@ js_files: [index]
     <div class="groups">
 
       <div class="group">
+        <!-- Waze -->
+        <!--
+        <div class="bullet">
+          <div class="bullet-title">
+            <div class="logo">
+              <img data-src="/assets/images/waze.svg"/>
+            </div>
+            <div>
+              <span class="date">2020 - Today: </span>
+              <span class="position">Front End Developer</span>
+              <span class="location">@Google TLV</span>
+              <span>(Vendor by Spectory)</span>
+            </div>
+          </div>
+          <p>
+            A vendor team member at Waze.
+          </p>
+          <p>
+            TODO
+          </p>
+        </div>
+        -->
+
+        <!-- Trends -->
         <div class="bullet">
           <div class="bullet-title">
             <div class="logo">
               <img data-src="https://cdn1.iconfinder.com/data/icons/company-identity/100/new-google-favicon-128.png"/>
             </div>
             <div>
-              <span class="date">2017 - Today: </span>
+              <span class="date">2017 - 2020: </span>
               <span class="position">Front End Developer</span>
               <span class="location">@Google TLV</span>
               <span>(Vendor by Spectory)</span>
@@ -154,6 +178,8 @@ js_files: [index]
             <a href="https://newsinitiative.withgoogle.com/" target="blank">Google News Initiative</a>.
           </p>
         </div>
+
+        <!-- Spectory -->
         <div class="bullet">
           <div class="bullet-title">
             <div class="logo">

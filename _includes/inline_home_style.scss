@@ -273,9 +273,10 @@ nav {
     display: flex;
 
     .logo {
+      align-items: center;
       background: #FFF;
       border-radius: 50px;
-      height: 2rem;
+      display: flex;
       margin: .5rem;
       width: 2rem;
     }
