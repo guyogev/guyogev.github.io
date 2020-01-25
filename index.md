@@ -5,7 +5,7 @@
 layout: home
 name: home
 css_files: []
-js_files: [index]
+js_files: [scroll-polyfill, index]
 ---
 
 <nav>
