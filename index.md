@@ -204,7 +204,7 @@ js_files: [scroll-polyfill, index]
           <p>
             In addition to the regular development tasks, I also led the company
             'On Boarding' program, which is a 4 weeks training for junior web
-            developers, jump-starting their carrier.
+            developers, jump-starting their career.
           </p>
           <p>
             I played major part at the company DevOps, which included designing
