@@ -133,7 +133,6 @@ js_files: [scroll-polyfill, index]
 
       <div class="group">
         <!-- Waze -->
-        <!--
         <div class="bullet">
           <div class="bullet-title">
             <div class="logo">
@@ -150,10 +149,9 @@ js_files: [scroll-polyfill, index]
             A vendor team member at Waze.
           </p>
           <p>
-            TODO
+            Tech design & development of tools for <a href="https://www.waze.com/partners">Waze Partners</a>.
           </p>
         </div>
-        -->
 
         <!-- Trends -->
         <div class="bullet">
