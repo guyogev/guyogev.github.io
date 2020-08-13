@@ -6,6 +6,7 @@ description: "Increasing code velocity and team satisfaction via effective code 
 date:   2019-08-12 14:29:43 +0200
 css_files: []
 js_files: [index]
+medium_url: https://medium.com/@guyogev/building-code-review-speedguy-yogev-50b0080b177
 ---
 #### Building Code Review Speed - Guidelines for Fast & Effective CR
 

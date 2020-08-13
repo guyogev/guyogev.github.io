@@ -6,6 +6,7 @@ description: "The 10X Developer"
 date:   2019-03-14 14:29:43 +0200
 css_files: []
 js_files: [index]
+medium_url: https://medium.com/@guyogev/the-10x-developer-7e47c96bc8e4
 ---
 
 ### What is a 10X Developer

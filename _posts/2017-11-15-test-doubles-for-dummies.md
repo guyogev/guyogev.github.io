@@ -5,6 +5,7 @@ subtitle: "Test Doubles comes on many shapes and sizes."
 description: "Test Doubles For Dummies"
 date:   2017-11-15 21:29:43 +0200
 css_files: []
+medium_url: https://medium.com/@guyogev/test-doubles-for-dummies-62aa482ac7bb
 ---
 **Test Doubles** is a generic term for any kind of pretend object used in place of a real object for testing purposes.
 

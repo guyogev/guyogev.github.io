@@ -6,6 +6,7 @@ description: "Performance and DevTools"
 date:   2018-12-28 14:29:43 +0200
 css_files: []
 js_files: [index]
+medium_url: https://medium.com/@guyogev/performance-and-devtools-d625c4b8442b
 ---
 
 A while back, I wrote about [improving web pages performance JS optimizing]({% post_url 2017-10-06-web-browsers-performance-goodies %}).

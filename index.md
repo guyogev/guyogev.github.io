@@ -266,7 +266,12 @@ js_files: [scroll-polyfill, index]
   <section class="blog anchor-offset" id="blog">
     <div class="sub-title">Blog</div>
     {% for post in site.posts %}
-      <a href="{{ post.url }}">
+      {% if post.medium_url %}
+        {% assign url = post.medium_url %}
+      {% else %}
+        {% assign url = post.url %}
+      {% endif %}
+      <a href="{{ url }}">
         <div class="date">{{ post.date | date_to_string }}</div>
         <div class="post-text">
           <div class="post-title">{{ post.title }}</div>

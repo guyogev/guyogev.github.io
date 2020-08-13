@@ -6,6 +6,7 @@ description: "Continuous deployment team prerequisites"
 date:   2019-04-24 14:29:43 +0200
 css_files: []
 js_files: [index]
+medium_url: https://medium.com/@guyogev/continuous-deployment-how-to-use-it-optimally-9c0e66a666c9
 ---
 
 *Continuous deployment (CD)* is the practice of minimizing the time between a code change and production deployment via automation.
