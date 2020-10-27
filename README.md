@@ -2,29 +2,28 @@
 
 ## Table of Contents
 
-<!-- TOC -->
-
-- [Code quality](#code-quality)
-  - [DRY](#dry)
-  - [YAGNI](#yagni)
-  - [KISS](#kiss)
-  - [Crash early](#crash-early)
-  - [Testing](#testing)
-- [Project quality](#project-quality)
-  - [Solution Architecture](#solution-architecture)
-    - [Planning phase](#planning-phase)
-    - [Documentation phase](#documentation-phase)
-    - [Implementation phase](#implementation-phase)
-  - [Tech debt](#tech-debt)
-  - [Code review](#code-review)
-  - [Security](#security)
-  - [Tasks management](#tasks-management)
-- [Productivity](#productivity)
-  - [Power user](#power-user)
-  - [10X Developer](#10x-developer)
+- [Personal code of conduct](#personal-code-of-conduct)
+  - [Table of Contents](#table-of-contents)
+  - [Code quality](#code-quality)
+    - [DRY](#dry)
+    - [YAGNI](#yagni)
+    - [KISS](#kiss)
+    - [Crash early](#crash-early)
+    - [Testing](#testing)
+  - [Project quality](#project-quality)
+    - [Solution Architecture](#solution-architecture)
+      - [Planning phase](#planning-phase)
+      - [Documentation phase](#documentation-phase)
+      - [Implementation phase](#implementation-phase)
+    - [Tech debt](#tech-debt)
+    - [Code review](#code-review)
+    - [Security](#security)
+    - [Tasks management](#tasks-management)
+  - [Productivity](#productivity)
+    - [Power user](#power-user)
+    - [10X Developer](#10x-developer)
   - [Growth](#growth)
-- [Additional Resources](#additional-resources)
-<!-- /TOC -->
+  - [Additional Resources](#additional-resources)
 
 ---
 
@@ -120,7 +119,7 @@ Even minor change in requirements can have drastic effect on system design.
 1. Design is not set in stone. Dev may find mistakes and raise issues.
 2. Verify the architecture is implemented correctly, on a weekly base.
 
-[Osim Tochna e63| The architect](https://www.osimhistoria.com/software/osim-tochna-63)
+- [Osim Tochna e63| The architect](https://www.osimhistoria.com/software/osim-tochna-63)
 
 ### Tech debt
 
