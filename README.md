@@ -181,19 +181,24 @@ Minimize the effort, maximize the value.
 1. Understand the task at hand. What it the requirement, Why is it needed & by when.
 2. Perfection is your enemy. Know when its good enough, and let it go.
 3. Automate repetitive tasks with scripts.
-4. Be a giver.
+4. Maintain dotfile repo for fast system setup.
 
 - [The 10X Developer
   ](https://medium.com/@guyogev/the-10x-developer-7e47c96bc8e4)
-
-- [Are you a giver or a taker | Adam Grant](https://www.ted.com/talks/adam_grant_are_you_a_giver_or_a_taker?utm_campaign=tedspread&utm_medium=referral&utm_source=tedcomshare)
+- [Awesome dotfiles](https://github.com/webpro/awesome-dotfiles#readme)
+- [guyogev/dotfiles](https://github.com/guyogev/dotfiles)
 
 ## Growth
 
 1. Fill ideal time with content (read on the bus, catch a podcast while doing dishes...)
-2. Balance knowledge investment, maintain.
-3. Invest at least 10 minutes a day to probe for new material. Keep a list of findings to get back to.
-4. Subscribe to weekly newsletters & digests.
+2. Balance knowledge investment.
+3. Know where the rest of the industry is.
+4. Invest at least 10 minutes a day to probe for new material. Keep a list of findings to get back to.
+5. Subscribe to weekly newsletters & digests.
+6. Be a giver.
+
+- [Are you a giver or a taker | Adam Grant](https://www.ted.com/talks/adam_grant_are_you_a_giver_or_a_taker?utm_campaign=tedspread&utm_medium=referral&utm_source=tedcomshare)
+- [State of JS](https://stateofjs.com/)
 
 ---
 
