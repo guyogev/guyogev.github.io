@@ -8,21 +8,18 @@ css_files: []
 js_files: [scroll-polyfill, index]
 ---
 
-<nav>
-  <span class="menu" onclick="jumpTo('about')">About</span>
-  <span class="menu" onclick="jumpTo('social')">Social</span>
-  <span class="menu" onclick="jumpTo('skills')">Skills</span>
-  <span class="menu" onclick="jumpTo('resume')">Resume</span>
-  <span class="menu" onclick="jumpTo('blog')">Blog</span>
-</nav>
+<div class="nav-wrapper">
+  <nav>
+    <span class="menu" onclick="jumpTo('about')">About</span>
+    <span class="menu" onclick="jumpTo('skills')">Skills</span>
+    <span class="menu" onclick="jumpTo('social')">Social</span>
+    <a class="menu" href="https://www.linkedin.com/in/guy-yogev-22220096/" target="_blank">Resume</a>
+    <a class="menu" href="https://medium.com/@guyogev" target="_blank">Blog</a>
+  </nav>
+</div>
 
 <main>
   {% include about.html %}
-  {% include social.html %}
   {% include skills-stack.html %}
-  {% include resume.html %}
-  <section class="blog anchor-offset" id="blog">
-    <div class="sub-title">Blog</div>
-    {% include blog_posts.html %}
-  </section>
+  {% include social.html %}
 </main>
